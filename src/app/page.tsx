@@ -1,5 +1,4 @@
 import { Contact } from "@/components/sections/Contact";
-import { Corridor } from "@/components/sections/Corridor";
 import { Ecosystem } from "@/components/sections/Ecosystem";
 import { Faq } from "@/components/sections/Faq";
 import { Footer } from "@/components/sections/Footer";
@@ -30,7 +29,6 @@ export default function HomePage() {
         <Stats />
         <Mission />
         <Pathway />
-        <Corridor />
         <Technology />
         <Ecosystem />
         <Leadership />

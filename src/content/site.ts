@@ -33,12 +33,12 @@ export const siteConfig = {
 } as const;
 
 export const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Capabilities", href: "#pathway" },
-  { label: "Technology Areas", href: "#technology" },
-  { label: "Leadership", href: "#leadership" },
-  { label: "News", href: "#news" },
-  { label: "FAQ", href: "#faq" },
+  { label: "About", section: "about" },
+  { label: "Capabilities", section: "pathway" },
+  { label: "Technology Areas", section: "technology" },
+  { label: "Leadership", section: "leadership" },
+  { label: "News", section: "news" },
+  { label: "FAQ", section: "faq" },
 ] as const;
 
 export const externalLinks = {
@@ -144,21 +144,6 @@ export const pathway = [
   },
 ] as const;
 
-export const corridor = {
-  west: {
-    label: "Midwest",
-    place: "Indiana",
-    hub: "SCMC",
-    items: ["Defense-transition expertise", "System integration", "Manufacturing and testing capacity"],
-  },
-  east: {
-    label: "Northeast",
-    place: "Massachusetts",
-    hub: "NEMC",
-    items: ["Semiconductor development", "Research and innovation", "Broad coalition network"],
-  },
-  waypoints: ["Research", "Prototyping", "Manufacturing", "Deployment"],
-} as const;
 
 export type TechArea = {
   id: string;

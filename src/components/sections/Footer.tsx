@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Logo } from "@/components/brand/Logo";
 import { Mark } from "@/components/brand/Mark";
+import { AnchorLink } from "@/components/ui/AnchorLink";
 import { pressRelease } from "@/content/press-release";
 import { legacyHubs, navLinks, operators, siteConfig } from "@/content/site";
 
@@ -46,12 +47,12 @@ export function Footer() {
           <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:col-span-7">
             <Column title="Explore">
               {navLinks.map((l) => (
-                <li key={l.href}>
-                  <a href={l.href} className={linkClass}>{l.label}</a>
+                <li key={l.section}>
+                  <AnchorLink section={l.section} className={linkClass}>{l.label}</AnchorLink>
                 </li>
               ))}
               <li>
-                <a href="#contact" className={linkClass}>Contact</a>
+                <AnchorLink section="contact" className={linkClass}>Contact</AnchorLink>
               </li>
               <li>
                 <Link href={`/news/${pressRelease.slug}`} className={linkClass}>Press release</Link>

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { Logo } from "@/components/brand/Logo";
-import { Button } from "@/components/ui/Button";
+import { AnchorLink } from "@/components/ui/AnchorLink";
 import { legacyHubs, navLinks } from "@/content/site";
 import { cn } from "@/lib/cn";
 
@@ -41,23 +41,29 @@ export function Navbar({ initialTone = "light" }: { initialTone?: "light" | "dar
 
         <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">
           {navLinks.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
+            <AnchorLink
+              key={item.section}
+              section={item.section}
               className={cn(
                 "rounded-full px-3.5 py-2 text-[13.5px] font-medium transition-colors",
                 light ? "text-white/80 hover:bg-white/10 hover:text-white" : "text-navy-800/80 hover:bg-navy-50 hover:text-brand-navy",
               )}
             >
               {item.label}
-            </a>
+            </AnchorLink>
           ))}
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <Button href="#contact" variant={light ? "sky" : "primary"} size="md">
+          <AnchorLink
+            section="contact"
+            className={cn(
+              "inline-flex h-11 items-center justify-center rounded-full px-5 text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5",
+              light ? "bg-brand-sky text-navy-950 hover:bg-sky-300" : "bg-brand-navy text-white shadow-soft hover:bg-navy-900 hover:shadow-lift",
+            )}
+          >
             Connect with MAIN
-          </Button>
+          </AnchorLink>
         </div>
 
         <button
@@ -103,23 +109,31 @@ export function Navbar({ initialTone = "light" }: { initialTone?: "light" | "dar
               variants={{ hidden: {}, show: { transition: { staggerChildren: 0.05, delayChildren: 0.05 } } }}
             >
               {navLinks.map((item) => (
-                <motion.a
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setOpen(false)}
+                <motion.div
+                  key={item.section}
                   variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0 } }}
-                  className="border-b border-white/10 py-4 text-2xl font-semibold tracking-tight text-white"
+                  className="border-b border-white/10"
                 >
-                  {item.label}
-                </motion.a>
+                  <AnchorLink
+                    section={item.section}
+                    onClick={() => setOpen(false)}
+                    className="block py-4 text-2xl font-semibold tracking-tight text-white"
+                  >
+                    {item.label}
+                  </AnchorLink>
+                </motion.div>
               ))}
               <motion.div
                 variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0 } }}
                 className="mt-8"
               >
-                <Button href="#contact" variant="sky" size="lg" className="w-full" onClick={() => setOpen(false)}>
+                <AnchorLink
+                  section="contact"
+                  onClick={() => setOpen(false)}
+                  className="inline-flex h-13 w-full items-center justify-center rounded-full bg-brand-sky px-7 text-[15px] font-semibold text-navy-950 transition-colors hover:bg-sky-300"
+                >
                   Connect with MAIN
-                </Button>
+                </AnchorLink>
               </motion.div>
               <motion.div
                 variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0 } }}

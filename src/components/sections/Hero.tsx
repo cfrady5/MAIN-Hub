@@ -29,24 +29,10 @@ export function Hero() {
       <div className="container-x relative grid min-h-[100svh] grid-cols-1 items-center gap-14 pb-16 pt-28 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 lg:pb-20 lg:pt-32">
         {/* Copy */}
         <div className="max-w-2xl">
-          <Reveal>
-            <a
-              href={`/news/${pressRelease.slug}`}
-              className="glass-dark group inline-flex items-center gap-3 rounded-full py-1.5 pl-2 pr-4 text-[13px] font-medium text-white/85 transition-colors hover:text-white"
-            >
-              <span className="relative flex size-6 items-center justify-center rounded-full bg-brand-green/25">
-                <span className="absolute inline-flex size-2 rounded-full bg-brand-green animate-pulse-ring" />
-                <span className="relative size-2 rounded-full bg-brand-green" />
-              </span>
-              NEMC and SCMC are now one national hub
-              <ArrowRight className="size-3.5 text-brand-sky transition-transform group-hover:translate-x-0.5" />
-            </a>
-          </Reveal>
-
           <Reveal delay={0.08}>
             <h1
               id="hero-heading"
-              className="mt-7 text-balance text-[2.6rem] font-extrabold leading-[1.02] tracking-[-0.035em] sm:text-6xl lg:text-[4.4rem]"
+              className="text-balance text-[2.6rem] font-extrabold leading-[1.02] tracking-[-0.035em] sm:text-6xl lg:text-[4.4rem]"
             >
               One national pathway from <span className="text-gradient-sky">research to deployment</span>
               <span className="text-brand-sky">.</span>
