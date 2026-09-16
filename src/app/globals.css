@@ -3,28 +3,28 @@
 /* ------------------------------------------------------------------
    MAIN Hub design tokens
    Brand palette (SCMC brand guidelines, updated 2026):
-   Navy #1f3655 · Green #279643 · Medium Blue #2d64a2 · Lt. Blue #38bdf8 · Grey #D5D5D6
+   Navy #1f3655 · Lt. Blue #7cc8ea · Green #279643 · Lt. Green #b9e7a6 · Grey #D5D5D6
    Typeface: Plus Jakarta Sans
 ------------------------------------------------------------------- */
 @theme {
   --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
 
   --color-brand-navy: #1f3655;
-  --color-brand-blue: #2d64a2;
-  --color-brand-sky: #38bdf8;
+  --color-brand-sky: #7cc8ea;
   --color-brand-green: #279643;
+  --color-brand-mint: #b9e7a6;
   --color-brand-grey: #d5d5d6;
 
   --color-navy-950: #0a1424;
   --color-navy-900: #12233a;
   --color-navy-800: #1f3655;
-  --color-navy-700: #27446b;
-  --color-navy-600: #2d64a2;
-  --color-navy-500: #3b78bd;
-  --color-navy-400: #6a9bd6;
-  --color-navy-300: #a9c4e8;
-  --color-navy-200: #d3e1f3;
-  --color-navy-100: #e9f0f9;
+  --color-navy-700: #2c4a72;
+  --color-navy-600: #3b5d88;
+  --color-navy-500: #587aa4;
+  --color-navy-400: #86a1c1;
+  --color-navy-300: #b3c5da;
+  --color-navy-200: #d5dfeb;
+  --color-navy-100: #e8eef5;
   --color-navy-50: #f4f7fb;
 
   --color-ink: #0f1c2e;
@@ -37,7 +37,7 @@
 
   --shadow-soft: 0 1px 2px rgb(15 28 46 / 0.04), 0 8px 24px -8px rgb(15 28 46 / 0.12);
   --shadow-lift: 0 2px 4px rgb(15 28 46 / 0.06), 0 24px 48px -16px rgb(15 28 46 / 0.22);
-  --shadow-glow: 0 0 0 1px rgb(56 189 248 / 0.25), 0 20px 60px -20px rgb(56 189 248 / 0.45);
+  --shadow-glow: 0 0 0 1px rgb(124 200 234 / 0.25), 0 20px 60px -20px rgb(124 200 234 / 0.45);
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 
@@ -88,7 +88,7 @@
     text-rendering: optimizeLegibility;
   }
   ::selection {
-    background: rgb(56 189 248 / 0.35);
+    background: rgb(124 200 234 / 0.45);
     color: #0a1424;
   }
   :focus-visible {
@@ -134,14 +134,14 @@
 }
 
 @utility text-gradient-sky {
-  background-image: linear-gradient(92deg, #7dd3fc 0%, #38bdf8 45%, #a5f3fc 100%);
+  background-image: linear-gradient(92deg, #7cc8ea 0%, #9bd9d6 55%, #b9e7a6 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
 @utility text-gradient-navy {
-  background-image: linear-gradient(92deg, #1f3655 0%, #2d64a2 60%, #38bdf8 120%);
+  background-image: linear-gradient(92deg, #1f3655 0%, #3b5d88 60%, #7cc8ea 120%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -181,7 +181,7 @@
 /* Hairline top border in the brand gradient */
 @utility border-gradient-top {
   border-top: 2px solid transparent;
-  border-image: linear-gradient(90deg, #2d64a2, #38bdf8) 1;
+  border-image: linear-gradient(90deg, #1f3655, #7cc8ea) 1;
 }
 
 /* Hide scrollbars for marquee tracks */

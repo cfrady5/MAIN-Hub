@@ -59,7 +59,7 @@ export function Navbar({ initialTone = "light" }: { initialTone?: "light" | "dar
             section="contact"
             className={cn(
               "inline-flex h-11 items-center justify-center rounded-full px-5 text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5",
-              light ? "bg-brand-sky text-navy-950 hover:bg-sky-300" : "bg-brand-navy text-white shadow-soft hover:bg-navy-900 hover:shadow-lift",
+              light ? "bg-brand-sky text-navy-950 hover:brightness-110" : "bg-brand-navy text-white shadow-soft hover:bg-navy-900 hover:shadow-lift",
             )}
           >
             Connect with MAIN
@@ -130,7 +130,7 @@ export function Navbar({ initialTone = "light" }: { initialTone?: "light" | "dar
                 <AnchorLink
                   section="contact"
                   onClick={() => setOpen(false)}
-                  className="inline-flex h-13 w-full items-center justify-center rounded-full bg-brand-sky px-7 text-[15px] font-semibold text-navy-950 transition-colors hover:bg-sky-300"
+                  className="inline-flex h-13 w-full items-center justify-center rounded-full bg-brand-sky px-7 text-[15px] font-semibold text-navy-950 transition-colors hover:brightness-110"
                 >
                   Connect with MAIN
                 </AnchorLink>

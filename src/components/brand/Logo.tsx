@@ -20,7 +20,7 @@ export function Logo({ tone = "dark", className, withTagline = false }: Props) {
       <Mark
         className={cn(
           "h-8 w-auto shrink-0 transition-colors duration-300",
-          isLight ? "text-brand-sky group-hover:text-white" : "text-brand-navy group-hover:text-brand-blue",
+          isLight ? "text-brand-sky group-hover:text-white" : "text-brand-navy group-hover:text-navy-600",
         )}
       />
       <span className="flex flex-col leading-none">

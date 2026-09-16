@@ -6,7 +6,7 @@ export function Stats() {
   return (
     <section className="relative isolate overflow-hidden bg-brand-navy text-white" aria-label="MAIN Hub by the numbers">
       <div aria-hidden className="absolute inset-0 -z-10 bg-line-grid opacity-60 [mask-image:linear-gradient(to_bottom,transparent,black,transparent)]" />
-      <div aria-hidden className="absolute left-1/2 top-1/2 -z-10 h-[400px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-blue/30 blur-[120px]" />
+      <div aria-hidden className="absolute left-1/2 top-1/2 -z-10 h-[400px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-navy-600/40 blur-[120px]" />
       <div className="container-x py-16 sm:py-20">
         <RevealGroup as="ul" className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
           {stats.map((s) => (

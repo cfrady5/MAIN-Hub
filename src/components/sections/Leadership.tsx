@@ -33,7 +33,7 @@ export function Leadership() {
                 <figcaption className="mt-7 border-t border-navy-200/70 pt-5">
                   <p className="text-base font-bold text-brand-navy">{q.name}</p>
                   <p className="mt-1 text-[13px] leading-snug text-navy-700/80">{q.title}</p>
-                  <p className="mt-1 text-[12px] font-semibold uppercase tracking-[0.14em] text-brand-blue">{q.org}</p>
+                  <p className="mt-1 text-[12px] font-semibold uppercase tracking-[0.14em] text-navy-600">{q.org}</p>
                 </figcaption>
               </figure>
             </RevealItem>

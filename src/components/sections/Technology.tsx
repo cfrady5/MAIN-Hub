@@ -39,16 +39,16 @@ export function Technology() {
                 <article className="group relative flex h-full flex-col overflow-hidden rounded-3xl bg-white p-7 ring-1 ring-navy-100 transition-all duration-500 hover:-translate-y-1 hover:shadow-lift hover:ring-brand-sky/60">
                   <div
                     aria-hidden
-                    className="absolute -right-10 -top-10 size-36 rounded-full bg-gradient-to-br from-brand-sky/20 to-brand-blue/10 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
+                    className="absolute -right-10 -top-10 size-36 rounded-full bg-gradient-to-br from-brand-sky/25 to-brand-mint/15 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
                   />
                   <div className="relative flex items-start justify-between">
-                    <span className="flex size-12 items-center justify-center rounded-2xl bg-brand-navy text-brand-sky shadow-soft transition-colors duration-500 group-hover:bg-brand-blue">
+                    <span className="flex size-12 items-center justify-center rounded-2xl bg-brand-navy text-brand-sky shadow-soft transition-colors duration-500 group-hover:bg-navy-600">
                       <Icon className="size-5" strokeWidth={1.75} />
                     </span>
                     <span className="text-xs font-bold tracking-[0.2em] text-navy-200">0{i + 1}</span>
                   </div>
                   <h3 className="relative mt-6 text-xl font-bold tracking-[-0.015em] text-brand-navy">{area.title}</h3>
-                  <p className="relative mt-1 text-[12px] font-semibold uppercase tracking-[0.14em] text-brand-blue">
+                  <p className="relative mt-1 text-[12px] font-semibold uppercase tracking-[0.14em] text-navy-600">
                     {area.short}
                   </p>
                   <p className="relative mt-4 text-[15px] leading-relaxed text-navy-700/80">{area.body}</p>

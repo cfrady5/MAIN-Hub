@@ -27,7 +27,7 @@ function HubCard({ hub, delay }: { hub: LegacyHub; delay: number }) {
             <span
               className={cn(
                 "inline-flex items-center rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-[0.16em]",
-                sky ? "bg-navy-100 text-brand-blue" : "bg-brand-green/10 text-brand-green",
+                sky ? "bg-navy-100 text-brand-navy" : "bg-brand-green/10 text-brand-green",
               )}
             >
               {hub.acronym}
@@ -48,7 +48,7 @@ function HubCard({ hub, delay }: { hub: LegacyHub; delay: number }) {
             href={hub.operatorUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-semibold text-brand-blue underline-offset-4 hover:underline"
+            className="font-semibold text-brand-navy underline decoration-brand-sky decoration-2 underline-offset-4 hover:decoration-brand-navy"
           >
             {hub.operator}
           </a>{" "}

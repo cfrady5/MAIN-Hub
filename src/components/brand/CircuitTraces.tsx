@@ -29,9 +29,9 @@ export function CircuitTraces({ className, animated = true }: { className?: stri
     >
       <defs>
         <linearGradient id="trace-glow" x1="0" x2="1" y1="0" y2="0">
-          <stop offset="0" stopColor="#38bdf8" stopOpacity="0" />
-          <stop offset="0.5" stopColor="#38bdf8" stopOpacity="0.9" />
-          <stop offset="1" stopColor="#38bdf8" stopOpacity="0" />
+          <stop offset="0" stopColor="#7cc8ea" stopOpacity="0" />
+          <stop offset="0.5" stopColor="#7cc8ea" stopOpacity="0.9" />
+          <stop offset="1" stopColor="#7cc8ea" stopOpacity="0" />
         </linearGradient>
       </defs>
       <g stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.28">

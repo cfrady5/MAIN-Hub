@@ -60,7 +60,7 @@ export function Workforce() {
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <span className="inline-flex rounded-full bg-navy-100 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.16em] text-brand-blue">
+                      <span className="inline-flex rounded-full bg-navy-100 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.16em] text-brand-navy">
                         {o.short}
                       </span>
                       <h3 className="mt-4 text-2xl font-bold tracking-[-0.02em] text-brand-navy">{o.name}</h3>

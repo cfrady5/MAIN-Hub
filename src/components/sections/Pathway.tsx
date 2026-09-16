@@ -53,7 +53,7 @@ export function Pathway() {
                   <h3 className="text-xl font-bold tracking-[-0.015em] text-brand-navy">{step.title}</h3>
                   <p className="mt-3 text-[15px] leading-relaxed text-navy-700/80">{step.body}</p>
                   {i < pathway.length - 1 ? (
-                    <span className="mt-5 inline-block text-[11px] font-semibold uppercase tracking-[0.16em] text-brand-blue">
+                    <span className="mt-5 inline-block text-[11px] font-semibold uppercase tracking-[0.16em] text-navy-600">
                       Next: {pathway[i + 1].title}
                     </span>
                   ) : (

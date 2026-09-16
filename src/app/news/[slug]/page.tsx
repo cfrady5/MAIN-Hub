@@ -116,7 +116,7 @@ export default async function ReleasePage({ params }: PageProps<"/news/[slug]">)
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-navy-700/60">Media contact</p>
             <p className="mt-3 text-lg font-bold text-brand-navy">{siteConfig.contact.mediaName}</p>
             <p className="text-[15px] text-navy-700/85">{siteConfig.contact.mediaTitle}</p>
-            <a href={`mailto:${siteConfig.contact.mediaEmail}`} className="mt-2 inline-block break-all text-[15px] font-semibold text-brand-blue underline-offset-4 hover:underline">
+            <a href={`mailto:${siteConfig.contact.mediaEmail}`} className="mt-2 inline-block break-all text-[15px] font-semibold text-brand-navy underline decoration-brand-sky decoration-2 underline-offset-4 hover:underline">
               {siteConfig.contact.mediaEmail}
             </a>
             <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 border-t border-navy-200/70 pt-5 text-sm">

@@ -56,7 +56,7 @@ export function Contact() {
       aria-labelledby="contact-heading"
     >
       <div aria-hidden className="absolute inset-0 -z-20 bg-[radial-gradient(100%_70%_at_100%_0%,#1f3655_0%,#0a1424_60%)]" />
-      <div aria-hidden className="absolute -left-40 top-1/3 -z-10 size-[520px] rounded-full bg-brand-blue/30 blur-[140px]" />
+      <div aria-hidden className="absolute -left-40 top-1/3 -z-10 size-[520px] rounded-full bg-navy-600/40 blur-[140px]" />
       <CircuitTraces className="-z-10 text-brand-sky/50" animated={false} />
 
       <div className="container-x grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-10">
@@ -96,7 +96,7 @@ export function Contact() {
           <div className="glass-dark rounded-4xl p-6 shadow-lift sm:p-9">
             {status === "success" ? (
               <div className="flex min-h-[420px] flex-col items-center justify-center text-center">
-                <span className="flex size-16 items-center justify-center rounded-full bg-brand-green/20 text-emerald-300">
+                <span className="flex size-16 items-center justify-center rounded-full bg-brand-green/20 text-brand-mint">
                   <CheckCircle2 className="size-8" />
                 </span>
                 <h3 className="mt-6 text-2xl font-bold tracking-tight">Thank you</h3>
@@ -129,7 +129,7 @@ export function Contact() {
                 </div>
                 <div>
                   <label htmlFor="organizationType" className={label}>Organization type</label>
-                  <select id="organizationType" name="organizationType" required defaultValue="" className={cn(field, "appearance-none bg-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%2338bdf8%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22m6 9 6 6 6-6%22/></svg>')] bg-[length:16px] bg-[right_1rem_center] bg-no-repeat pr-10")}>
+                  <select id="organizationType" name="organizationType" required defaultValue="" className={cn(field, "appearance-none bg-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%237cc8ea%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22m6 9 6 6 6-6%22/></svg>')] bg-[length:16px] bg-[right_1rem_center] bg-no-repeat pr-10")}>
                     <option value="" disabled className="text-navy-900">Select one</option>
                     {organizationTypes.map((t) => (
                       <option key={t} value={t} className="text-navy-900">{t}</option>
@@ -138,7 +138,7 @@ export function Contact() {
                 </div>
                 <div className="sm:col-span-2">
                   <label htmlFor="interest" className={label}>I&apos;m interested in</label>
-                  <select id="interest" name="interest" required defaultValue="" className={cn(field, "appearance-none bg-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%2338bdf8%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22m6 9 6 6 6-6%22/></svg>')] bg-[length:16px] bg-[right_1rem_center] bg-no-repeat pr-10")}>
+                  <select id="interest" name="interest" required defaultValue="" className={cn(field, "appearance-none bg-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%237cc8ea%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22m6 9 6 6 6-6%22/></svg>')] bg-[length:16px] bg-[right_1rem_center] bg-no-repeat pr-10")}>
                     <option value="" disabled className="text-navy-900">Select one</option>
                     {interestAreas.map((t) => (
                       <option key={t} value={t} className="text-navy-900">{t}</option>

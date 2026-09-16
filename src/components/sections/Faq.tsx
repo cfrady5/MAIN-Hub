@@ -35,7 +35,7 @@ function Item({
           <span
             className={cn(
               "text-[17px] font-semibold tracking-[-0.01em] transition-colors sm:text-lg",
-              open ? "text-brand-blue" : "text-brand-navy group-hover:text-brand-blue",
+              open ? "text-navy-600" : "text-brand-navy group-hover:text-navy-600",
             )}
           >
             {q}

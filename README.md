@@ -2,7 +2,7 @@
 
 Marketing site for the **Microelectronics for American Innovation and National Security (MAIN) Hub**, the national ecosystem formed by consolidating the Northeast Microelectronics Coalition (NEMC) Hub and the Silicon Crossroads Microelectronics Commons (SCMC) Hub.
 
-Built with Next.js 16 (App Router), React 19, Tailwind CSS v4, Motion, and Lucide icons. Typeface and palette follow the SCMC brand guidelines (Plus Jakarta Sans; navy `#1f3655`, medium blue `#2d64a2`, light blue `#38bdf8`, green `#279643`).
+Built with Next.js 16 (App Router), React 19, Tailwind CSS v4, Motion, and Lucide icons. Typeface and palette follow the SCMC brand guidelines (Plus Jakarta Sans; navy `#1f3655`, light blue `#7cc8ea`, green `#279643`, light green `#b9e7a6`, grey `#d5d5d6`).
 
 ## Getting started
 

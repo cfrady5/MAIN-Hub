@@ -10,7 +10,7 @@ export function Eyebrow({
   tone?: "navy" | "light" | "sky";
 }) {
   const color =
-    tone === "light" ? "text-white/70" : tone === "sky" ? "text-brand-sky" : "text-brand-blue";
+    tone === "light" ? "text-white/70" : tone === "sky" ? "text-brand-sky" : "text-brand-navy";
   return (
     <span className={cn("eyebrow", color, className)}>
       <span className="eyebrow-dot" aria-hidden />

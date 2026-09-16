@@ -23,7 +23,7 @@ export function Hero() {
       <div aria-hidden className="absolute inset-0 -z-20 bg-[radial-gradient(120%_80%_at_50%_-10%,#1f3655_0%,#12233a_45%,#0a1424_100%)]" />
       <div aria-hidden className="absolute inset-0 -z-10 bg-line-grid opacity-70 [mask-image:radial-gradient(70%_60%_at_50%_40%,black,transparent)]" />
       <div aria-hidden className="absolute -right-40 top-[-10%] -z-10 size-[720px] rounded-full bg-brand-sky/20 blur-[140px]" />
-      <div aria-hidden className="absolute -left-40 bottom-[-20%] -z-10 size-[560px] rounded-full bg-brand-blue/30 blur-[140px]" />
+      <div aria-hidden className="absolute -left-40 bottom-[-20%] -z-10 size-[560px] rounded-full bg-navy-600/40 blur-[140px]" />
       <CircuitTraces className="-z-10 text-brand-sky/70" />
 
       <div className="container-x relative grid min-h-[100svh] grid-cols-1 items-center gap-14 pb-16 pt-28 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 lg:pb-20 lg:pt-32">
@@ -97,7 +97,7 @@ export function Hero() {
         <Reveal delay={0.2} className="relative mx-auto w-full max-w-[560px] lg:max-w-none">
           <div className="relative aspect-[1.05/1] w-full">
             {/* Glow disc */}
-            <div aria-hidden className="absolute left-1/2 top-1/2 size-[78%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(56,189,248,0.22),rgba(56,189,248,0.06)_55%,transparent_75%)]" />
+            <div aria-hidden className="absolute left-1/2 top-1/2 size-[78%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(124,200,234,0.22),rgba(124,200,234,0.06)_55%,transparent_75%)]" />
             {/* Orbit rings */}
             <div aria-hidden className="absolute left-1/2 top-1/2 size-[92%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/8" />
             <div aria-hidden className="absolute left-1/2 top-1/2 size-[66%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-brand-sky/20" />
@@ -106,7 +106,7 @@ export function Hero() {
             <div className="absolute inset-[12%] flex items-center justify-center animate-float-slow">
               <Mark
                 title="MAIN Hub monogram"
-                className="h-auto w-full text-white drop-shadow-[0_30px_60px_rgba(56,189,248,0.35)]"
+                className="h-auto w-full text-white drop-shadow-[0_30px_60px_rgba(124,200,234,0.35)]"
               />
             </div>
 

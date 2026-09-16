@@ -54,7 +54,7 @@ export function News() {
                 <p className="text-[13px] text-navy-700/75">{siteConfig.contact.mediaTitle}</p>
                 <a
                   href={`mailto:${siteConfig.contact.mediaEmail}`}
-                  className="mt-3 inline-block break-all text-sm font-semibold text-brand-blue underline-offset-4 hover:underline"
+                  className="mt-3 inline-block break-all text-sm font-semibold text-brand-navy underline decoration-brand-sky decoration-2 underline-offset-4 hover:underline"
                 >
                   {siteConfig.contact.mediaEmail}
                 </a>

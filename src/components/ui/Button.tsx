@@ -18,7 +18,7 @@ const variants: Record<Variant, string> = {
   "outline-light":
     "text-white ring-1 ring-inset ring-white/25 hover:ring-white/50 hover:bg-white/5 hover:-translate-y-0.5 focus-visible:ring-offset-navy-950",
   sky:
-    "bg-brand-sky text-navy-950 shadow-[0_10px_30px_-10px_rgb(56_189_248_/_0.7)] hover:bg-sky-300 hover:-translate-y-0.5 focus-visible:ring-offset-navy-950",
+    "bg-brand-sky text-navy-950 shadow-[0_10px_30px_-10px_rgb(124_200_234_/_0.6)] hover:brightness-110 hover:-translate-y-0.5 focus-visible:ring-offset-navy-950",
 };
 
 const sizes: Record<Size, string> = {
