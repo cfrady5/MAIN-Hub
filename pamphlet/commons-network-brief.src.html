@@ -1,0 +1,1024 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MAIN Hub · COMMONS Network Brief</title>
+<style>
+  @font-face { font-family: "Plus Jakarta Sans"; font-style: normal; font-weight: 400 800; font-display: block; src: url(__FONT__) format("woff2"); }
+  :root {
+    --navy: #1f3655;
+    --navy-950: #0a1424;
+    --navy-900: #12233a;
+    --navy-700: #2c4a72;
+    --navy-600: #3b5d88;
+    --navy-500: #587aa4;
+    --navy-300: #b3c5da;
+    --navy-200: #d5dfeb;
+    --navy-100: #e8eef5;
+    --navy-50: #f4f7fb;
+    --sky: #7cc8ea;
+    --sky-deep: #2f8fbd;
+    --sky-50: #eaf6fc;
+    --green: #279643;
+    --mint: #b9e7a6;
+    --mint-50: #eef8e9;
+    --grey: #d5d5d6;
+    --ink: #0f1c2e;
+    --muted: #51627a;
+    --line: #e3e9f1;
+    --conn: #9fb1c8;
+  }
+  @page { size: 11in 8.5in; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #fff; }
+  body {
+    font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+    color: var(--ink);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    font-feature-settings: "liga", "cv11";
+  }
+  svg.icon { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+
+  /* ---------- Page shell ---------- */
+  .page {
+    width: 11in; height: 8.5in;
+    position: relative; overflow: hidden;
+    page-break-after: always; break-after: page;
+    display: flex; flex-direction: column;
+    padding: 0.42in 0.55in 0.36in;
+    background: #fff;
+  }
+  .page:last-child { page-break-after: auto; break-after: auto; }
+  .ph {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-bottom: 10px; border-bottom: 1px solid var(--line);
+    font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: var(--navy-500);
+  }
+  .ph-brand { display: flex; align-items: center; gap: 8px; }
+  .ph-brand .m { width: 26px; height: 21px; color: var(--navy); }
+  .ph-brand b { font-size: 12px; letter-spacing: -0.02em; text-transform: none; color: var(--navy); font-weight: 800; }
+  .ph-brand .sep { width: 1px; height: 12px; background: var(--navy-200); margin: 0 2px; }
+  .ph-sec { color: var(--green); font-weight: 700; }
+  .pf {
+    margin-top: auto; padding-top: 8px; border-top: 1px solid var(--line);
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 8.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--navy-500); font-weight: 600;
+  }
+  .pf .pn { font-size: 11px; font-weight: 800; color: var(--navy); letter-spacing: 0.04em; }
+  .pf .pn i { font-style: normal; color: var(--sky-deep); }
+
+  .title { padding: 14px 0 12px; display: flex; align-items: flex-end; justify-content: space-between; gap: 28px; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 9.5px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green); }
+  .eyebrow::before { content: ""; width: 18px; height: 2px; background: var(--green); border-radius: 2px; }
+  h1 { font-size: 27px; line-height: 1.1; font-weight: 800; letter-spacing: -0.025em; color: var(--navy); margin-top: 6px; }
+  h1 em { font-style: normal; color: var(--sky-deep); }
+  .lede { font-size: 11.5px; line-height: 1.5; color: var(--muted); max-width: 390px; text-align: right; }
+  .title.one h1 { white-space: nowrap; font-size: 25px; }
+  .title.one .lede { max-width: 340px; font-size: 11px; }
+
+  /* ---------- Org chart ---------- */
+  .org-wrap { flex: 1; display: grid; grid-template-columns: 1fr 212px; gap: 22px; min-height: 0; }
+  .chart {
+    background: var(--navy-50); border: 1px solid var(--line); border-radius: 16px;
+    padding: 20px 16px 14px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  }
+  .vc { width: 2px; height: 13px; background: var(--conn); flex: none; }
+  .encl {
+    position: relative; border-radius: 14px; padding: 17px 16px 12px;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .encl-tag {
+    position: absolute; top: -9px; left: 50%; transform: translateX(-50%);
+    font-size: 8px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase;
+    padding: 3px 11px; border-radius: 99px; white-space: nowrap;
+  }
+  .encl.exec { border: 1.5px solid var(--navy-300); background: #fff; }
+  .encl.exec > .encl-tag { background: var(--navy); color: #fff; }
+  .encl.crane { border: 1.5px solid var(--sky); background: #fff; padding-top: 15px; }
+  .encl.crane > .encl-tag { background: var(--sky); color: var(--navy-950); }
+  .encl.main { border: 2px solid var(--green); background: linear-gradient(180deg, var(--mint-50), #fff 70%); width: 100%; padding: 18px 12px 12px; }
+  .encl.main > .encl-tag { background: var(--green); color: #fff; font-size: 9px; }
+  .encl.me { border: 1px solid var(--navy-200); background: var(--navy-50); padding: 14px 12px 10px; }
+  .encl.me > .encl-tag { background: var(--navy-600); color: #fff; font-size: 7.5px; top: -8px; }
+  .row { display: flex; gap: 10px; justify-content: center; }
+
+  .node {
+    background: #fff; border: 1px solid var(--navy-200); border-radius: 8px;
+    padding: 6px 10px 7px; text-align: center; line-height: 1.2;
+  }
+  .node .k { display: block; font-size: 6.8px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sky-deep); margin-bottom: 2px; }
+  .node .n { display: block; font-size: 11.5px; font-weight: 800; color: var(--navy); letter-spacing: -0.01em; }
+  .node .r { display: block; font-size: 8.8px; color: var(--muted); margin-top: 1px; font-weight: 500; }
+  .node.top { background: var(--navy); border-color: var(--navy); width: 230px; padding: 8px 10px; }
+  .node.top .n { color: #fff; font-size: 13px; }
+  .node.top .r { color: var(--sky); }
+  .node.pm { width: 170px; }
+  .node.crane { width: 168px; }
+  .node.crane .k { color: var(--navy-500); }
+  .node.nstxl { width: 220px; border: 1.5px solid var(--sky-deep); }
+  .node.nstxl .ota { display: block; white-space: nowrap; margin-top: 4px; padding-top: 4px; border-top: 1px solid var(--line); font-size: 8px; color: var(--muted); }
+  .node.nstxl .ota b { color: var(--navy); font-weight: 800; letter-spacing: 0.04em; }
+  .node.ct { width: 160px; border: 1.5px dashed var(--green); }
+  .node.ct .k { color: var(--green); }
+  .node.ari { width: 340px; background: var(--navy); border-color: var(--navy); padding: 8px 10px; position: relative; }
+  .node.ari .k { color: var(--mint); }
+  .node.ari .n { color: #fff; font-size: 13px; }
+  .node.ari .r { color: var(--navy-200); }
+
+  .lvl5 { width: 100%; display: grid; grid-template-columns: 1fr 220px 1fr; position: relative; }
+  .lvl5 .hbar { position: absolute; top: 0; left: 50%; width: calc(110px + (100% - 220px) / 4); border-top: 2px dashed var(--green); opacity: .8; }
+  .lvl5 .c2, .lvl5 .c3 { display: flex; flex-direction: column; align-items: center; }
+  .lvl5 .c3 .vc { background: none; border-left: 2px dashed var(--green); width: 0; opacity: .8; }
+
+  .branch { display: flex; justify-content: center; width: 100%; }
+  .bn { flex: 1; display: flex; flex-direction: column; align-items: center; position: relative; padding: 14px 5px 0; }
+  .bn::before { content: ""; position: absolute; top: 0; left: 50%; width: 2px; height: 14px; background: var(--conn); transform: translateX(-50%); }
+  .bn::after { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--conn); }
+  .bn:first-child::after { left: 50%; }
+  .bn:last-child::after { right: 50%; }
+  .hub {
+    width: 100%; background: #fff; border: 1px solid var(--navy-200); border-top: 3px solid var(--sky);
+    border-radius: 8px; padding: 6px 6px 7px; text-align: center; min-height: 62px;
+    display: flex; flex-direction: column; justify-content: center; line-height: 1.2;
+  }
+  .hub .k { font-size: 6.5px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sky-deep); }
+  .hub .n { font-size: 11.5px; font-weight: 800; color: var(--navy); margin-top: 2px; }
+  .hub .n.sm { font-size: 9px; line-height: 1.15; }
+  .hub .r { font-size: 8.2px; color: var(--muted); margin-top: 2px; }
+  .sub-vc { width: 2px; height: 9px; background: var(--conn); }
+  .partner {
+    width: 100%; background: transparent; border: 1px dashed var(--navy-300); border-radius: 7px;
+    padding: 4px 5px 5px; text-align: center; line-height: 1.2;
+  }
+  .partner .k, .partner .n, .partner .r { display: block; }
+  .partner .k { font-size: 6.2px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--navy-500); }
+  .partner .n { font-size: 10px; font-weight: 800; color: var(--navy); }
+  .partner .r { font-size: 7.8px; color: var(--muted); }
+  .badge-new {
+    position: absolute; top: -8px; right: -8px; background: var(--green); color: #fff;
+    font-size: 7px; font-weight: 800; letter-spacing: 0.12em; padding: 3px 6px; border-radius: 99px; text-transform: uppercase;
+    box-shadow: 0 0 0 2px #fff;
+  }
+  .hub.changed { border-top-color: var(--green); position: relative; }
+
+  /* ---------- Aside ---------- */
+  .aside { display: flex; flex-direction: column; gap: 12px; }
+  .aside h3 { font-size: 10px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--navy); padding-bottom: 6px; border-bottom: 2px solid var(--navy); }
+  .aside ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .aside li { font-size: 10.6px; line-height: 1.45; color: var(--ink); padding-left: 13px; position: relative; }
+  .aside li::before { content: ""; position: absolute; left: 0; top: 5px; width: 6px; height: 6px; border-radius: 2px; background: var(--sky); }
+  .aside li b { color: var(--navy); font-weight: 800; }
+  .aside .green li::before { background: var(--green); }
+  .callout {
+    margin-top: auto; background: var(--navy); color: #fff; border-radius: 12px; padding: 13px 15px;
+    font-size: 11px; line-height: 1.45; font-weight: 500;
+  }
+  .callout .k { display: block; font-size: 7.8px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sky); margin-bottom: 5px; }
+  .callout.g .k { color: var(--mint); }
+  .flow { display: flex; flex-direction: column; gap: 3px; margin-top: 4px; }
+  .flow span { display: block; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14); border-radius: 6px; padding: 4px 8px; font-size: 9.5px; font-weight: 600; }
+  .flow i { display: block; text-align: center; font-style: normal; font-size: 9px; color: var(--sky); line-height: 1; }
+  .legend { display: grid; grid-template-columns: 1fr; gap: 5px; font-size: 9px; color: var(--muted); }
+  .legend div { display: flex; align-items: center; gap: 7px; }
+  .sw { width: 14px; height: 10px; border-radius: 3px; flex: none; }
+
+  /* ---------- Slide cards (franchise) ---------- */
+  .slides { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; min-height: 0; padding-top: 4px; }
+  .slide {
+    border: 1px solid var(--line); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column;
+    background: #fff; box-shadow: 0 1px 2px rgb(15 28 46 / .04), 0 8px 24px -10px rgb(15 28 46 / .14);
+  }
+  .slide-head { background: var(--navy); color: #fff; padding: 16px 22px 15px; position: relative; overflow: hidden; }
+  .slide-head .no { font-size: 8.5px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sky); }
+  .slide-head h2 { font-size: 19px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; margin-top: 3px; }
+  .slide-head .ghost { position: absolute; right: -8px; top: -14px; font-size: 76px; font-weight: 800; color: rgba(255,255,255,.06); letter-spacing: -0.05em; line-height: 1; }
+  .slide-body { padding: 20px 22px 20px; display: flex; flex-direction: column; gap: 16px; flex: 1; min-height: 0; }
+  .pts { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  .pts li { display: grid; grid-template-columns: 28px 1fr; gap: 11px; font-size: 12.8px; line-height: 1.5; color: var(--ink); }
+  .pts li .dot { width: 28px; height: 28px; border-radius: 8px; background: var(--sky-50); color: var(--sky-deep); display: grid; place-items: center; }
+  .pts li .dot svg { width: 15px; height: 15px; }
+  .pts li b { color: var(--navy); font-weight: 800; display: block; font-size: 13.5px; letter-spacing: -0.01em; margin-bottom: 1px; }
+  .quote {
+    border-left: 3px solid var(--green); background: var(--mint-50); padding: 13px 16px; border-radius: 0 10px 10px 0;
+    font-size: 15px; line-height: 1.4; font-weight: 700; color: var(--navy); letter-spacing: -0.01em;
+  }
+  .visual { margin-top: auto; background: var(--navy-50); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
+  .vlabel { font-size: 8.5px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--navy-500); margin-bottom: 8px; }
+
+  .bignum { display: flex; align-items: center; gap: 14px; }
+  .bignum .num { font-size: 58px; font-weight: 800; letter-spacing: -0.04em; color: var(--navy); line-height: 1; }
+  .bignum .num.to { color: var(--green); }
+  .bignum .arr { color: var(--sky-deep); }
+  .bignum .arr svg { width: 28px; height: 28px; }
+  .bignum p { font-size: 12px; color: var(--muted); line-height: 1.45; margin-left: 6px; padding-left: 14px; border-left: 1px solid var(--navy-200); }
+
+  .hubrow { display: flex; gap: 6px; justify-content: space-between; }
+  .hubchip { flex: 1; text-align: center; font-size: 10.5px; font-weight: 800; color: var(--navy); background: #fff; border: 1px solid var(--navy-200); border-top: 3px solid var(--sky); border-radius: 7px; padding: 9px 2px; }
+  .ticks { display: flex; justify-content: space-around; padding: 0 20px; }
+  .ticks span { width: 2px; height: 16px; background: var(--conn); }
+  .platform { background: var(--navy); color: #fff; border-radius: 8px; padding: 10px 10px; text-align: center; font-size: 12px; font-weight: 800; letter-spacing: .01em; }
+  .platform small { display: block; font-size: 8px; font-weight: 600; color: var(--sky); letter-spacing: .12em; text-transform: uppercase; margin-bottom: 1px; }
+  .vcaps { display: flex; justify-content: space-between; font-size: 8.3px; color: var(--muted); margin-top: 6px; font-weight: 600; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 7px; }
+  .chip { font-size: 11px; font-weight: 700; color: var(--navy); background: #fff; border: 1px solid var(--navy-200); border-radius: 99px; padding: 6px 12px; display: inline-flex; align-items: center; gap: 5px; }
+  .chip svg { width: 12px; height: 12px; color: var(--green); stroke-width: 3; }
+  .chip.dark { background: var(--navy); color: #fff; border-color: var(--navy); }
+
+  .transform { display: grid; grid-template-columns: 1fr 34px 1fr; align-items: center; gap: 4px; }
+  .tbox { border-radius: 9px; padding: 12px 12px; text-align: center; }
+  .tbox small { display: block; font-size: 7.5px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+  .tbox b { display: block; font-size: 13px; font-weight: 800; margin-top: 2px; }
+  .tbox.from { background: #fff; border: 1px solid var(--navy-200); color: var(--navy); }
+  .tbox.from small { color: var(--navy-500); }
+  .tbox.to { background: var(--navy); color: #fff; }
+  .tbox.to small { color: var(--mint); }
+  .transform .arr { color: var(--green); display: grid; place-items: center; }
+  .transform .arr svg { width: 22px; height: 22px; }
+
+  .svc { display: flex; flex-direction: column; gap: 10px; flex: 1; }
+  .svc-row { flex: 1; display: grid; grid-template-columns: 42px 1fr; gap: 14px; align-items: center; background: var(--navy-50); border: 1px solid var(--line); border-radius: 12px; padding: 10px 14px; }
+  .svc-row .ic { width: 42px; height: 42px; border-radius: 9px; background: var(--navy); color: var(--sky); display: grid; place-items: center; }
+  .svc-row .ic svg { width: 20px; height: 20px; }
+  .svc-row b { display: block; font-size: 13.5px; font-weight: 800; color: var(--navy); }
+  .svc-row span { display: block; font-size: 11.8px; line-height: 1.4; color: var(--muted); margin-top: 1px; }
+
+  .checks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding-left: 39px; }
+  .check { display: flex; align-items: center; gap: 6px; background: #fff; border: 1px solid var(--navy-200); border-radius: 8px; padding: 8px 10px; font-size: 11.5px; font-weight: 700; color: var(--navy); }
+  .check svg { width: 13px; height: 13px; color: var(--green); stroke-width: 3; }
+
+  .reach { display: grid; grid-template-columns: 1fr 22px 1fr 22px 1fr; align-items: center; }
+  .reach .st { text-align: center; background: #fff; border: 1px solid var(--navy-200); border-radius: 9px; padding: 11px 4px; }
+  .reach .st.mid { background: var(--navy); border-color: var(--navy); }
+  .reach .st small { display: block; font-size: 7.3px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--sky-deep); }
+  .reach .st b { display: block; font-size: 12px; font-weight: 800; color: var(--navy); margin-top: 2px; }
+  .reach .st.mid small { color: var(--mint); }
+  .reach .st.mid b { color: #fff; }
+  .reach .a { color: var(--sky-deep); display: grid; place-items: center; }
+  .reach .a svg { width: 16px; height: 16px; }
+
+  .chain { display: grid; grid-template-columns: 66px 1fr 18px 1fr 18px 1fr; align-items: center; gap: 4px; }
+  .chain + .chain { margin-top: 10px; }
+  .chain .lbl { font-size: 8.8px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--navy-500); }
+  .chain .lbl.g { color: var(--green); }
+  .chain .c { font-size: 11px; font-weight: 700; text-align: center; border-radius: 8px; padding: 10px 5px; line-height: 1.2; background: #fff; border: 1px solid var(--navy-200); color: var(--navy); }
+  .chain.new .c { background: var(--navy); border-color: var(--navy); color: #fff; }
+  .chain.new .c.hl { background: var(--green); border-color: var(--green); }
+  .chain .a { color: var(--conn); display: grid; place-items: center; }
+  .chain .a svg { width: 13px; height: 13px; }
+  .chain.new .a { color: var(--green); }
+
+  .triad { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .triad div { background: var(--mint-50); border: 1px solid var(--mint); border-radius: 10px; padding: 11px 12px; font-size: 12.5px; font-weight: 700; color: var(--navy); line-height: 1.3; }
+  .triad div b { display: block; color: var(--green); font-weight: 800; font-size: 8px; margin-bottom: 3px; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 1px; }
+
+  /* ---------- Timeline page ---------- */
+  .panel { border: 1px solid var(--line); border-radius: 16px; background: #fff; padding: 14px 18px; }
+  .panel-h { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 8px; }
+  .panel-h h2 { font-size: 14px; font-weight: 800; color: var(--navy); letter-spacing: -0.015em; }
+  .panel-h .k { font-size: 8.5px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--sky-deep); }
+  .tl { position: relative; display: grid; grid-template-columns: repeat(7, 1fr); padding-top: 4px; }
+  .tl::before { content: ""; position: absolute; left: 7%; right: 7%; top: 21px; height: 3px; background: linear-gradient(90deg, var(--navy) 0 75%, var(--navy-200) 75% 100%); border-radius: 3px; }
+  .ms { display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; z-index: 1; }
+  .ms .pin { width: 34px; height: 34px; border-radius: 50%; background: var(--navy); border: 3px solid #fff; box-shadow: 0 0 0 2px var(--navy); display: grid; place-items: center; color: #fff; font-size: 10px; font-weight: 800; }
+  .ms.fc .pin { background: #fff; color: var(--green); box-shadow: 0 0 0 2px var(--green); border-style: solid; }
+  .ms .d { margin-top: 8px; font-size: 11.5px; font-weight: 800; color: var(--navy); letter-spacing: -0.01em; }
+  .ms .e { font-size: 9.5px; color: var(--muted); margin-top: 1px; line-height: 1.3; font-weight: 500; }
+  .ms .f { margin-top: 4px; font-size: 7px; font-weight: 800; letter-spacing: .14em; color: var(--green); border: 1px solid var(--green); border-radius: 99px; padding: 1px 6px; }
+  .today { position: absolute; top: -6px; left: 71.4%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; z-index: 2; }
+  .today span { font-size: 7px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; background: var(--sky); color: var(--navy-950); padding: 2px 6px; border-radius: 99px; white-space: nowrap; }
+  .today i { width: 2px; height: 26px; background: var(--sky); display: block; }
+  .tl-legend { display: flex; gap: 16px; justify-content: flex-end; font-size: 9px; color: var(--muted); font-weight: 600; margin-top: 10px; }
+  .tl-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .tl-legend .o { width: 11px; height: 11px; border-radius: 50%; }
+
+  .opts { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; flex: 1; min-height: 0; margin-top: 14px; }
+  .opt { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; background: #fff; }
+  .opt-h { padding: 11px 16px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .opt-h .tag { font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+  .opt-h h3 { font-size: 13.5px; font-weight: 800; letter-spacing: -0.015em; margin-top: 1px; }
+  .opt.o1 .opt-h { background: var(--navy); color: #fff; }
+  .opt.o1 .opt-h .tag { color: var(--sky); }
+  .opt.o2 .opt-h { background: var(--green); color: #fff; }
+  .opt.o2 .opt-h .tag { color: var(--mint); }
+  .opt-b { padding: 12px 16px 12px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+  .facts { display: grid; grid-template-columns: 92px 1fr; border-top: 1px solid var(--line); }
+  .facts dt, .facts dd { font-size: 11.5px; line-height: 1.4; padding: 9px 0; border-bottom: 1px solid var(--line); }
+  .facts dt { font-size: 8px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--navy-500); padding-top: 8px; }
+  .facts dd { color: var(--ink); }
+  .kv { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .kv div { background: var(--navy-50); border-radius: 9px; padding: 6px 9px; }
+  .kv small { display: block; font-size: 7.3px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--navy-500); }
+  .kv b { display: block; font-size: 14px; font-weight: 800; color: var(--navy); letter-spacing: -0.02em; margin-top: 1px; }
+  .kv b.s { font-size: 11px; line-height: 1.3; padding-top: 2px; }
+
+  .gantt { display: grid; grid-template-columns: repeat(4, 1fr); position: relative; }
+  .gantt .mo { font-size: 7.8px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--navy-500); border-left: 1px solid var(--line); padding: 0 0 4px 5px; }
+  .gantt .lane { grid-column: 1 / -1; position: relative; height: 22px; margin-top: 3px; }
+  .gantt .bar { position: absolute; top: 0; height: 22px; border-radius: 6px; font-size: 8.8px; font-weight: 700; display: flex; align-items: center; padding: 0 8px; white-space: nowrap; }
+  .gantt .bar.n { background: var(--navy-100); color: var(--navy); }
+  .gantt .bar.g { background: var(--mint); color: var(--navy-950); }
+  .gantt .bar.gg { background: var(--green); color: #fff; }
+  .gantt .bar.s { background: #fff; border: 1.5px dashed var(--green); color: var(--green); }
+  .gantt .bar.nn { background: var(--navy); color: #fff; }
+  .gantt .flag { position: absolute; top: 0; height: 22px; display: flex; align-items: center; gap: 4px; font-size: 8.5px; font-weight: 800; color: var(--navy); white-space: nowrap; }
+  .gantt .flag::before { content: ""; width: 10px; height: 10px; transform: rotate(45deg); background: var(--green); border-radius: 2px; }
+  .rel { display: grid; grid-template-columns: 1fr; gap: 5px; }
+  .rel .track { position: relative; height: 22px; background: var(--navy-50); border-radius: 6px; }
+  .rel .track .fill { position: absolute; left: 0; top: 0; bottom: 0; width: 78%; background: var(--navy); border-radius: 6px; color: #fff; font-size: 8.8px; font-weight: 700; display: flex; align-items: center; padding: 0 8px; }
+  .rel .track .end { position: absolute; left: 78%; top: 0; bottom: 0; display: flex; align-items: center; gap: 4px; padding-left: 8px; font-size: 8.5px; font-weight: 800; color: var(--navy); }
+  .rel .track .end::before { content: ""; width: 10px; height: 10px; transform: rotate(45deg); background: var(--sky-deep); border-radius: 2px; }
+  .rel .scale { position: relative; height: 12px; display: block; font-size: 7.8px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--navy-500); }
+  .opt-foot { font-size: 9.8px; line-height: 1.45; color: var(--muted); border-top: 1px solid var(--line); padding-top: 7px; margin-top: auto; }
+  .opt-foot b { color: var(--navy); }
+
+  /* ---------- Option detail pages ---------- */
+  .detail { flex: 1; display: grid; grid-template-columns: 1.05fr 1fr; gap: 20px; min-height: 0; }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .stat { border-radius: 14px; padding: 15px 16px 14px; background: var(--navy); color: #fff; position: relative; overflow: hidden; }
+  .stat.alt { background: var(--navy-50); color: var(--navy); border: 1px solid var(--line); }
+  .stat.grn { background: var(--green); }
+  .stat small { display: block; font-size: 7.8px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--sky); }
+  .stat.alt small { color: var(--sky-deep); }
+  .stat.grn small { color: var(--mint); }
+  .stat b { display: block; font-size: 34px; font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; margin-top: 5px; }
+  .stat b sup { font-size: 13px; letter-spacing: 0; vertical-align: 12px; margin-right: 1px; }
+  .stat b span { font-size: 13px; letter-spacing: -0.01em; font-weight: 700; }
+  .stat p { font-size: 10.5px; margin-top: 4px; line-height: 1.35; opacity: .85; }
+  .col { display: flex; flex-direction: column; gap: 14px; min-height: 0; }
+  .card { border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; background: #fff; }
+  .card h4 { font-size: 9.5px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--green); margin-bottom: 8px; display: flex; align-items: center; gap: 7px; }
+  .card h4 svg { width: 13px; height: 13px; }
+  .card p { font-size: 12.5px; line-height: 1.55; color: var(--ink); }
+  .card p b { color: var(--navy); }
+  .card.tint { background: var(--navy-50); }
+  .steps { display: flex; flex-direction: column; gap: 0; }
+  .step { display: grid; grid-template-columns: 34px 1fr; gap: 14px; position: relative; padding-bottom: 18px; }
+  .step:last-child { padding-bottom: 0; }
+  .step::before { content: ""; position: absolute; left: 16px; top: 34px; bottom: 0; width: 2px; background: var(--navy-200); }
+  .step:last-child::before { display: none; }
+  .step .n { width: 34px; height: 34px; border-radius: 50%; background: var(--navy); color: #fff; display: grid; place-items: center; font-size: 12px; font-weight: 800; box-shadow: 0 0 0 4px var(--navy-100); }
+  .step.g .n { background: var(--green); box-shadow: 0 0 0 4px var(--mint-50); }
+  .step .w small { display: block; font-size: 7.8px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--sky-deep); padding-top: 3px; }
+  .step.g .w small { color: var(--green); }
+  .step .w b { display: block; font-size: 14px; font-weight: 800; color: var(--navy); margin-top: 1px; letter-spacing: -0.01em; }
+  .step .w p { font-size: 11.6px; line-height: 1.45; color: var(--muted); margin-top: 2px; }
+  .tick-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .tick-list li { display: grid; grid-template-columns: 16px 1fr; gap: 9px; font-size: 12.3px; line-height: 1.45; }
+  .tick-list li svg { width: 14px; height: 14px; color: var(--green); stroke-width: 3; margin-top: 1px; }
+  .tick-list li b { color: var(--navy); }
+  .precedent { display: grid; grid-template-columns: 1fr 18px 1fr 18px 1fr; align-items: center; gap: 2px; margin-top: 8px; }
+  .precedent div { background: #fff; border: 1px solid var(--navy-200); border-radius: 8px; padding: 9px 6px; text-align: center; }
+  .precedent small { display: block; font-size: 7px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--navy-500); }
+  .precedent b { display: block; font-size: 12px; font-weight: 800; color: var(--navy); }
+  .precedent i { color: var(--sky-deep); display: grid; place-items: center; }
+  .precedent i svg { width: 13px; height: 13px; }
+
+  /* ---------- Covers ---------- */
+  .cover { padding: 0; background: var(--navy-950); color: #fff; }
+  .cover .traces { position: absolute; inset: 0; width: 100%; height: 100%; color: var(--sky); }
+  .cover .glow { position: absolute; width: 8in; height: 8in; right: -2.2in; top: -1.6in; border-radius: 50%; background: radial-gradient(closest-side, rgba(124,200,234,.22), rgba(124,200,234,0)); }
+  .cover .glow2 { position: absolute; width: 6in; height: 6in; left: -2in; bottom: -3in; border-radius: 50%; background: radial-gradient(closest-side, rgba(39,150,67,.22), rgba(39,150,67,0)); }
+  .cover .bigmark { position: absolute; right: 0.55in; top: 1.35in; width: 4.1in; height: 3.24in; color: var(--sky); opacity: .95; }
+  .cover-in { position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; padding: 0.55in 0.65in 0.5in; }
+  .lockup { display: flex; align-items: center; gap: 12px; }
+  .lockup svg { width: 44px; height: 35px; color: var(--sky); }
+  .lockup b { display: block; font-size: 22px; font-weight: 800; letter-spacing: -0.03em; }
+  .lockup small { display: block; font-size: 8px; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.6); font-weight: 600; margin-top: 2px; }
+  .cover .kick { margin-top: 1.05in; display: inline-flex; align-items: center; gap: 8px; font-size: 10px; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; color: var(--mint); }
+  .cover .kick::before { content: ""; width: 26px; height: 2px; background: var(--mint); }
+  .cover h1 { font-size: 50px; line-height: 1.02; letter-spacing: -0.035em; color: #fff; margin-top: 14px; max-width: 6.1in; }
+  .cover h1 em { color: var(--sky); font-style: normal; }
+  .cover .subt { font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.78); max-width: 5.4in; margin-top: 16px; font-weight: 500; }
+  .prep { margin-top: 26px; display: inline-flex; flex-direction: column; gap: 3px; border-left: 3px solid var(--sky); padding: 3px 0 3px 14px; }
+  .prep small { font-size: 8.5px; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.55); font-weight: 700; }
+  .prep b { font-size: 15px; font-weight: 800; }
+  .prep span { font-size: 11px; color: var(--sky); font-weight: 600; }
+  .inside { margin-top: auto; display: grid; grid-template-columns: repeat(8, 1fr); gap: 0; border-top: 1px solid rgba(255,255,255,.16); padding-top: 12px; }
+  .inside div { padding-right: 10px; }
+  .inside small { display: block; font-size: 10px; font-weight: 800; color: var(--sky); }
+  .inside span { display: block; font-size: 9px; line-height: 1.3; color: rgba(255,255,255,.72); margin-top: 2px; font-weight: 500; }
+  .cover-foot { display: flex; justify-content: space-between; font-size: 8.5px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.5); font-weight: 600; margin-top: 12px; }
+
+  .back-center { position: relative; z-index: 2; margin: auto; text-align: center; display: flex; flex-direction: column; align-items: center; max-width: 7.6in; }
+  .back-center .mk { width: 1.5in; height: 1.19in; color: var(--sky); }
+  .back-lines { margin-top: 30px; display: flex; flex-direction: column; gap: 6px; }
+  .back-lines div { font-size: 30px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.12; }
+  .back-lines div em { font-style: normal; color: var(--sky); }
+  .back-lines div:nth-child(3) em { color: var(--mint); }
+  .back-sub { margin-top: 20px; font-size: 12px; line-height: 1.6; color: rgba(255,255,255,.7); max-width: 6.2in; }
+  .back-foot { position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid rgba(255,255,255,.16); padding-top: 14px; }
+  .back-foot .org { font-size: 10px; color: rgba(255,255,255,.7); line-height: 1.5; text-align: right; }
+  .back-foot .org b { color: #fff; font-size: 11.5px; }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="mark" viewBox="0 0 1295 1022"><path fill="currentColor" fill-rule="evenodd" d="__MARK_PATH__"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2zM22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18M8 17v-4M13 17V8M18 17V5"/></symbol>
+    <symbol id="i-mega" viewBox="0 0 24 24"><path d="m3 11 16-6v14L3 13zM7 12.5v4a2.5 2.5 0 0 0 5 0v-2.5"/></symbol>
+    <symbol id="i-funnel" viewBox="0 0 24 24"><path d="M22 3H2l8 9.5V19l4 2v-8.5z"/></symbol>
+    <symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M15.5 8.5H11a2 2 0 0 0 0 4h2a2 2 0 0 1 0 4H8.5M12 6v2.5M12 16.5V18"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M4 22V4a1 1 0 0 1 1-1h13l-2 4 2 4H5"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-network" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="16" y="16" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3M12 12V8"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></symbol>
+    <symbol id="i-store" viewBox="0 0 24 24"><path d="M3 9 4.5 3h15L21 9M3 9h18M3 9a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0M5 12v9h14v-9M10 21v-5h4v5"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.7 12.4a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.6L22 7H6"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></symbol>
+  </defs>
+</svg>
+
+<!-- Reusable circuit-trace field (copied into cover + back) -->
+<template id="traces-src"></template>
+
+<!-- =============================== 1 · COVER =============================== -->
+<section class="page cover">
+  <div class="glow"></div><div class="glow2"></div>
+  __TRACES__
+  <svg class="bigmark"><use href="#mark"/></svg>
+  <div class="cover-in">
+    <div class="lockup">
+      <svg><use href="#mark"/></svg>
+      <div><b>MAIN Hub</b><small>Microelectronics for American Innovation and National Security</small></div>
+    </div>
+    <div class="kick">Microelectronics Commons</div>
+    <h1>One network.<br>A <em>common operating system.</em></h1>
+    <p class="subt">The current and proposed COMMONS organizational structure, the ARI network administrator (franchise) model, and two pathways to a microelectronics marketplace.</p>
+    <div class="prep">
+      <small>Prepared for</small>
+      <b>The Honorable Mike Dodd</b>
+      <span>ASW(CT) / OUSW(R&amp;E)</span>
+    </div>
+    <div class="inside">
+      <div><small>02</small><span>Current org chart</span></div>
+      <div><small>03</small><span>Proposed org chart</span></div>
+      <div><small>04</small><span>Franchise model: context</span></div>
+      <div><small>05</small><span>Franchise model: ARI &amp; services</span></div>
+      <div><small>06</small><span>Franchise model: end state</span></div>
+      <div><small>07</small><span>Marketplace &amp; timelines</span></div>
+      <div><small>08</small><span>Start your own marketplace</span></div>
+      <div><small>09</small><span>Use the APEX Marketplace</span></div>
+    </div>
+    <div class="cover-foot"><span>Applied Research Institute</span><span>October 2026</span></div>
+  </div>
+</section>
+
+<!-- =============================== 2 · CURRENT ORG =============================== -->
+<section class="page">
+  <header class="ph">
+    <div class="ph-brand"><svg class="m"><use href="#mark"/></svg><b>MAIN Hub</b><span class="sep"></span><span>Microelectronics Commons</span></div>
+    <div class="ph-sec">Organization · Current State</div>
+  </header>
+  <div class="title one">
+    <div><div class="eyebrow">Today</div><h1>Current COMMONS organizational structure</h1></div>
+    <p class="lede">Five regional Tech Hubs connect directly to the consortium manager, and each one runs its own operating model.</p>
+  </div>
+  <div class="org-wrap">
+    <div class="chart">
+      <div class="encl exec">
+        <span class="encl-tag">OASW(CT) / OUSW(R&amp;E)</span>
+        <div class="node top"><span class="n">Honorable Mike Dodd</span><span class="r">ASW(CT) / OUSW(R&amp;E)</span></div>
+        <div class="vc"></div>
+        <div class="encl me">
+          <span class="encl-tag">Microelectronics</span>
+          <div class="row">
+            <div class="node pm"><span class="n">Eric Makara</span><span class="r">Program Manager</span></div>
+            <div class="node pm"><span class="n">William Bernard</span><span class="r">Technical Director</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="vc"></div>
+      <div class="encl crane">
+        <span class="encl-tag">NSWC Crane Microelectronics Commons Team</span>
+        <div class="row">
+          <div class="node crane"><span class="k">Technical Direction</span><span class="n">Dustin J. Decker</span><span class="r">Deputy Technical Director</span></div>
+          <div class="node crane"><span class="k">Execution Advisory</span><span class="n">Jamie Divine</span><span class="r">Execution Advisor</span></div>
+          <div class="node crane"><span class="k">Engineering &amp; Tech</span><span class="n">John Schofield</span><span class="r">Asst. Deputy Technical Director</span></div>
+        </div>
+      </div>
+      <div class="vc"></div>
+      <div class="lvl5">
+        <div class="hbar"></div>
+        <div></div>
+        <div class="c2"><div class="vc"></div>
+          <div class="node nstxl"><span class="k">Consortium Manager</span><span class="n">NSTXL</span><span class="r">National Security Technology Accelerator</span><span class="ota">Executing COMMONS through <b>S2MARTS OTA</b></span></div>
+        </div>
+        <div class="c3"><div class="vc"></div>
+          <div class="node ct"><span class="k">Technical Domain Leads</span><span class="n">CT Leads</span><span class="r">Critical Technology Leads</span></div>
+        </div>
+      </div>
+      <div class="vc"></div>
+      <div class="branch">
+        <div class="bn"><div class="hub"><span class="k">Tech Hub</span><span class="n">MMEC</span><span class="r">Midwest Microelectronics Consortium</span></div></div>
+        <div class="bn"><div class="hub"><span class="k">Tech Hub</span><span class="n">CA DREAMS</span><span class="r">California DREAMS Hub</span></div><div class="sub-vc"></div><div class="partner"><span class="k">Partner</span><span class="n">NWAI</span><span class="r">Northwest AI</span></div></div>
+        <div class="bn"><div class="hub"><span class="k">Tech Hub</span><span class="n">Nordtech</span><span class="r">Northeast Regional Defense Tech Hub</span></div><div class="sub-vc"></div><div class="partner"><span class="k">Partner</span><span class="n">CLAWS</span><span class="r">Wide Bandgap Semiconductors Hub</span></div></div>
+        <div class="bn"><div class="hub"><span class="k">Tech Hub</span><span class="n">SWAP</span><span class="r">Southwest Advanced Prototyping</span></div></div>
+        <div class="bn"><div class="hub"><span class="k">Tech Hub</span><span class="n">SCMC</span><span class="r">Silicon Crossroads Microelectronics Commons</span></div><div class="sub-vc"></div><div class="partner"><span class="k">Partner</span><span class="n">NEMC</span><span class="r">Northeast Microelectronics Coalition</span></div></div>
+      </div>
+    </div>
+    <aside class="aside">
+      <h3>How it works today</h3>
+      <ul>
+        <li><b>NSTXL</b> is the consortium manager and executes COMMONS through the <b>S2MARTS OTA</b>.</li>
+        <li><b>Regional Hubs</b> connect directly to NSTXL as the technical execution hubs.</li>
+        <li><b>CT Leads</b> provide domain-specific technology governance and technical alignment as an external advisory arm.</li>
+        <li>The Hubs were stood up <b>independently</b>, each with its own organization, leadership, relationships, capabilities, and priorities.</li>
+      </ul>
+      <div class="legend">
+        <div><span class="sw" style="background:var(--navy)"></span>Executive &amp; program oversight</div>
+        <div><span class="sw" style="background:#fff;border:2px solid var(--sky)"></span>NSWC Crane team</div>
+        <div><span class="sw" style="background:#fff;border:2px solid var(--sky-deep)"></span>Consortium manager</div>
+        <div><span class="sw" style="background:#fff;border:2px dashed var(--green)"></span>CT Leads (advisory)</div>
+        <div><span class="sw" style="background:#fff;border:1px dashed var(--navy-300)"></span>Hub partner</div>
+      </div>
+      <div class="callout">
+        <span class="k">The result</span>
+        <div class="flow"><span>Individual Hubs</span><i>↓</i><span>Individual operating models</span><i>↓</i><span>Individual systems</span></div>
+      </div>
+    </aside>
+  </div>
+  <footer class="pf"><span>COMMONS Network Brief · Current organizational structure</span><span class="pn"><i>02</i> / 10</span></footer>
+</section>
+
+<!-- =============================== 3 · PROPOSED ORG =============================== -->
+<section class="page">
+  <header class="ph">
+    <div class="ph-brand"><svg class="m"><use href="#mark"/></svg><b>MAIN Hub</b><span class="sep"></span><span>Microelectronics Commons</span></div>
+    <div class="ph-sec">Organization · Proposed</div>
+  </header>
+  <div class="title one" style="padding-bottom:10px">
+    <div><div class="eyebrow">Proposed</div><h1>Proposed COMMONS organizational structure</h1></div>
+    <p class="lede">ARI becomes the network administrator (the franchisor) inside a MAIN boundary, directly above all regional Hubs.</p>
+  </div>
+  <div class="org-wrap">
+    <div class="chart" style="padding-top:14px;padding-bottom:10px">
+      <div class="encl exec" style="padding-top:15px;padding-bottom:10px">
+        <span class="encl-tag">OASW(CT) / OUSW(R&amp;E)</span>
+        <div class="node top"><span class="n">Honorable Mike Dodd</span><span class="r">ASW(CT) / OUSW(R&amp;E)</span></div>
+        <div class="vc" style="height:11px"></div>
+        <div class="encl me" style="padding-top:12px;padding-bottom:8px">
+          <span class="encl-tag">Microelectronics</span>
+          <div class="row">
+            <div class="node pm"><span class="n">Eric Makara</span><span class="r">Program Manager</span></div>
+            <div class="node pm"><span class="n">William Bernard</span><span class="r">Technical Director</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="vc" style="height:11px"></div>
+      <div class="encl crane" style="padding-bottom:10px">
+        <span class="encl-tag">NSWC Crane Microelectronics Commons Team</span>
+        <div class="row">
+          <div class="node crane"><span class="k">Technical Direction</span><span class="n">Dustin J. Decker</span><span class="r">Deputy Technical Director</span></div>
+          <div class="node crane"><span class="k">Execution Advisory</span><span class="n">Jamie Divine</span><span class="r">Execution Advisor</span></div>
+          <div class="node crane"><span class="k">Engineering &amp; Tech</span><span class="n">John Schofield</span><span class="r">Asst. Deputy Technical Director</span></div>
+        </div>
+      </div>
+      <div class="vc" style="height:11px"></div>
+      <div class="lvl5">
+        <div class="hbar"></div>
+        <div></div>
+        <div class="c2"><div class="vc" style="height:11px"></div>
+          <div class="node nstxl"><span class="k">Consortium Manager</span><span class="n">NSTXL</span><span class="r">National Security Technology Accelerator</span><span class="ota">Executing COMMONS through <b>S2MARTS OTA</b></span></div>
+        </div>
+        <div class="c3"><div class="vc" style="height:11px"></div>
+          <div class="node ct"><span class="k">Technical Domain Leads</span><span class="n">CT Leads</span><span class="r">Critical Technology Leads</span></div>
+        </div>
+      </div>
+      <div class="vc" style="height:16px"></div>
+      <div class="encl main">
+        <span class="encl-tag">MAIN</span>
+        <div class="node ari"><span class="badge-new">New</span><span class="k">Franchisor · Network Administrator</span><span class="n">ARI</span><span class="r">Applied Research Institute · Operational oversight &amp; multi-Hub coordination</span></div>
+        <div class="vc" style="height:10px"></div>
+        <div class="branch">
+          <div class="bn"><div class="hub"><span class="k">Tech Hub</span><span class="n">MMEC</span><span class="r">Midwest Microelectronics Consortium</span></div></div>
+          <div class="bn"><div class="hub"><span class="k">Tech Hub</span><span class="n">CA DREAMS</span><span class="r">California DREAMS Hub</span></div><div class="sub-vc"></div><div class="partner"><span class="k">Partner</span><span class="n">NWAI</span><span class="r">Northwest AI</span></div></div>
+          <div class="bn"><div class="hub"><span class="k">Tech Hub</span><span class="n">Nordtech</span><span class="r">Northeast Regional Defense Tech Hub</span></div><div class="sub-vc"></div><div class="partner"><span class="k">Partner</span><span class="n">CLAWS</span><span class="r">Wide Bandgap Semiconductors Hub</span></div></div>
+          <div class="bn"><div class="hub"><span class="k">Tech Hub</span><span class="n">SWAP</span><span class="r">Southwest Advanced Prototyping</span></div></div>
+          <div class="bn"><div class="hub changed"><span class="k">Tech Hub</span><span class="n">NEMC</span><span class="r">Northeast Microelectronics Coalition</span></div></div>
+        </div>
+      </div>
+    </div>
+    <aside class="aside">
+      <h3>What changes</h3>
+      <ul class="green">
+        <li><b>ARI becomes the network administrator</b>, providing a common operating system for every Hub inside the MAIN boundary.</li>
+        <li><b>ARI dissolves its standalone Hub role.</b> SCMC's capabilities become a platform that supports the entire network, and <b>NEMC</b> continues as the regional Hub.</li>
+        <li><b>Only shared functions are centralized.</b> Each Hub keeps its identity, leadership, expertise, membership, and relationships.</li>
+      </ul>
+      <h3>What stays the same</h3>
+      <ul>
+        <li>Government oversight, the NSWC Crane team, NSTXL execution through S2MARTS, and CT Leads' governance</li>
+      </ul>
+      <div class="callout g">
+        <span class="k">The result</span>
+        <div class="flow"><span>Individual Hubs</span><i>↓</i><span style="background:rgba(185,231,166,.16);border-color:rgba(185,231,166,.4)">Common network platform</span><i>↓</i><span>Shared services &amp; infrastructure</span></div>
+      </div>
+    </aside>
+  </div>
+  <footer class="pf"><span>COMMONS Network Brief · Proposed organizational structure</span><span class="pn"><i>03</i> / 10</span></footer>
+</section>
+
+<!-- =============================== 4 · FRANCHISE 1-2 =============================== -->
+<section class="page">
+  <header class="ph">
+    <div class="ph-brand"><svg class="m"><use href="#mark"/></svg><b>MAIN Hub</b><span class="sep"></span><span>Microelectronics Commons</span></div>
+    <div class="ph-sec">ARI Franchise Model · 1 – 2</div>
+  </header>
+  <div class="title">
+    <div><div class="eyebrow">The Franchise Model</div><h1>A common operating system<br>for the Microelectronics Hubs</h1></div>
+    <p class="lede">The Hubs grew up independently. A network-level administrator gives them one way to operate while each Hub stays independent.</p>
+  </div>
+  <div class="slides">
+    <article class="slide">
+      <div class="slide-head"><span class="ghost">01</span><div class="no">Slide 01</div><h2>Purpose and context</h2></div>
+      <div class="slide-body">
+        <ul class="pts">
+          <li><span class="dot"><svg class="icon"><use href="#i-target"/></svg></span><div><b>Purpose</b>Establish a common "franchise model" so the Microelectronics Hubs operate more consistently, efficiently, and in a structured way.</div></li>
+          <li><span class="dot"><svg class="icon"><use href="#i-network"/></svg></span><div><b>Context</b>The Hubs were created independently, each with its own organization, leadership, relationships, capabilities, and priorities.</div></li>
+          <li><span class="dot"><svg class="icon"><use href="#i-alert"/></svg></span><div><b>Recent lesson</b>Consolidating eight Hubs into five showed how hard alignment is.</div></li>
+        </ul>
+        <div class="visual">
+          <div class="vlabel">Hub consolidation</div>
+          <div class="bignum">
+            <span class="num">8</span><span class="arr"><svg class="icon"><use href="#i-arrow"/></svg></span><span class="num to">5</span>
+            <p>Hubs after consolidation. Getting them aligned was the hard part, and it showed that the network needs a common way of operating.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="slide">
+      <div class="slide-head"><span class="ghost">02</span><div class="no">Slide 02</div><h2>The administrator model</h2></div>
+      <div class="slide-body">
+        <ul class="pts">
+          <li><span class="dot"><svg class="icon"><use href="#i-layers"/></svg></span><div><b>Proposal</b>Designate one organization as a network-level administrator that provides a common operating system for all Hubs.</div></li>
+          <li><span class="dot"><svg class="icon"><use href="#i-shield"/></svg></span><div><b>Independence preserved</b>Hubs keep their identities, expertise, memberships, and relationships. Only shared functions are centralized.</div></li>
+        </ul>
+        <div class="quote">Focus: centralize what benefits from consistency and scale, not the Hubs themselves.</div>
+        <div class="visual">
+          <div class="vlabel">Hubs stay independent · shared functions are centralized</div>
+          <div class="hubrow"><span class="hubchip">MMEC</span><span class="hubchip">CA DREAMS</span><span class="hubchip">Nordtech</span><span class="hubchip">SWAP</span><span class="hubchip">NEMC</span></div>
+          <div class="ticks"><span></span><span></span><span></span><span></span><span></span></div>
+          <div class="platform"><small>Network administrator</small>Common operating system: shared functions</div>
+        </div>
+      </div>
+    </article>
+  </div>
+  <footer class="pf"><span>COMMONS Network Brief · ARI franchise model</span><span class="pn"><i>04</i> / 10</span></footer>
+</section>
+
+<!-- =============================== 5 · FRANCHISE 3-4 =============================== -->
+<section class="page">
+  <header class="ph">
+    <div class="ph-brand"><svg class="m"><use href="#mark"/></svg><b>MAIN Hub</b><span class="sep"></span><span>Microelectronics Commons</span></div>
+    <div class="ph-sec">ARI Franchise Model · 3 – 4</div>
+  </header>
+  <div class="title">
+    <div><div class="eyebrow">The Franchise Model</div><h1>Why ARI, and what it<br>would run for the network</h1></div>
+    <p class="lede">ARI already runs this model. It would move its SCMC capabilities out of a standalone Hub and into a platform that serves every Hub.</p>
+  </div>
+  <div class="slides">
+    <article class="slide">
+      <div class="slide-head"><span class="ghost">03</span><div class="no">Slide 03</div><h2>Why ARI fits: existing model and capabilities</h2></div>
+      <div class="slide-body">
+        <ul class="pts">
+          <li><span class="dot"><svg class="icon"><use href="#i-flag"/></svg></span><div><b>Track record</b>ARI already coordinates through the DIU on-ramp model, providing:</div></li>
+        </ul>
+        <div class="chips" style="padding-left:39px">
+          <span class="chip"><svg class="icon"><use href="#i-check"/></svg>Common playbooks &amp; SOPs</span>
+          <span class="chip"><svg class="icon"><use href="#i-check"/></svg>Reporting &amp; data</span>
+          <span class="chip"><svg class="icon"><use href="#i-check"/></svg>Events &amp; communications</span>
+          <span class="chip"><svg class="icon"><use href="#i-check"/></svg>Mission &amp; opportunity pipelines</span>
+          <span class="chip"><svg class="icon"><use href="#i-check"/></svg>Validation pathways</span>
+          <span class="chip"><svg class="icon"><use href="#i-check"/></svg>Resource &amp; investment coordination</span>
+        </div>
+        <ul class="pts">
+          <li><span class="dot"><svg class="icon"><use href="#i-layers"/></svg></span><div><b>SCMC as the platform</b>ARI's SCMC capabilities can move from a standalone Hub to a platform that supports the entire network. ARI would dissolve its Hub role to serve as administrator.</div></li>
+        </ul>
+        <div class="visual">
+          <div class="vlabel">ARI's role shifts</div>
+          <div class="transform">
+            <div class="tbox from"><small>Today</small><b>SCMC: a standalone Hub</b></div>
+            <div class="arr"><svg class="icon"><use href="#i-arrow"/></svg></div>
+            <div class="tbox to"><small>Proposed</small><b>Platform for the entire network</b></div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="slide">
+      <div class="slide-head"><span class="ghost">04</span><div class="no">Slide 04</div><h2>Shared services under the common operating system</h2></div>
+      <div class="slide-body">
+        <div class="svc">
+          <div class="svc-row"><span class="ic"><svg class="icon"><use href="#i-book"/></svg></span><div><b>Operating model</b><span>Shared playbooks, SOPs, service definitions, and processes.</span></div></div>
+          <div class="svc-row"><span class="ic"><svg class="icon"><use href="#i-chart"/></svg></span><div><b>Data and reporting</b><span>Common metrics, pipeline visibility, and performance reporting.</span></div></div>
+          <div class="svc-row"><span class="ic"><svg class="icon"><use href="#i-mega"/></svg></span><div><b>Communications and events</b><span>Coordinated national programming and stakeholder engagement.</span></div></div>
+          <div class="svc-row"><span class="ic"><svg class="icon"><use href="#i-funnel"/></svg></span><div><b>Opportunity pipeline and validation</b><span>Visibility into DoD needs and into funding and acquisition pathways, plus standardized validation.</span></div></div>
+          <div class="svc-row"><span class="ic"><svg class="icon"><use href="#i-coin"/></svg></span><div><b>Investment and marketplaces</b><span>Coordinated access to private capital, plus shared platforms for technologies, companies, and manufacturing capabilities.</span></div></div>
+        </div>
+      </div>
+    </article>
+  </div>
+  <footer class="pf"><span>COMMONS Network Brief · ARI franchise model</span><span class="pn"><i>05</i> / 10</span></footer>
+</section>
+
+<!-- =============================== 6 · FRANCHISE 5-6 =============================== -->
+<section class="page">
+  <header class="ph">
+    <div class="ph-brand"><svg class="m"><use href="#mark"/></svg><b>MAIN Hub</b><span class="sep"></span><span>Microelectronics Commons</span></div>
+    <div class="ph-sec">ARI Franchise Model · 5 – 6</div>
+  </header>
+  <div class="title">
+    <div><div class="eyebrow">The Franchise Model</div><h1>Hubs stay distinct.<br>The network <em>goes national.</em></h1></div>
+    <p class="lede">No Hub is centralized. The network gets a common operating system, and the government gets shared visibility across all of it.</p>
+  </div>
+  <div class="slides">
+    <article class="slide">
+      <div class="slide-head"><span class="ghost">05</span><div class="no">Slide 05</div><h2>What does not change: Hub autonomy and national reach</h2></div>
+      <div class="slide-body">
+        <ul class="pts">
+          <li><span class="dot"><svg class="icon"><use href="#i-shield"/></svg></span><div><b>Autonomy</b>No Hub is centralized. Each one keeps:</div></li>
+        </ul>
+        <div class="checks">
+          <span class="check"><svg class="icon"><use href="#i-check"/></svg>Identity</span>
+          <span class="check"><svg class="icon"><use href="#i-check"/></svg>Leadership</span>
+          <span class="check"><svg class="icon"><use href="#i-check"/></svg>Expertise</span>
+          <span class="check"><svg class="icon"><use href="#i-check"/></svg>Membership</span>
+          <span class="check"><svg class="icon"><use href="#i-check"/></svg>Relationships</span>
+          <span class="check"><svg class="icon"><use href="#i-check"/></svg>Areas of focus</span>
+        </div>
+        <ul class="pts">
+          <li><span class="dot"><svg class="icon"><use href="#i-globe"/></svg></span><div><b>National orientation</b>Many Hubs already operate nationally. A network administrator reinforces that and keeps the Hubs from becoming regional silos.</div></li>
+          <li><span class="dot"><svg class="icon"><use href="#i-pin"/></svg></span><div><b>Local to national</b>Regional Hubs such as CLAWS and NWAI connect local strengths to national opportunities through the network.</div></li>
+        </ul>
+        <div class="visual">
+          <div class="reach">
+            <div class="st"><small>Local</small><b>CLAWS · NWAI</b></div>
+            <div class="a"><svg class="icon"><use href="#i-arrow"/></svg></div>
+            <div class="st mid"><small>Network</small><b>Common platform</b></div>
+            <div class="a"><svg class="icon"><use href="#i-arrow"/></svg></div>
+            <div class="st"><small>National</small><b>DoD opportunities</b></div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="slide">
+      <div class="slide-head"><span class="ghost">06</span><div class="no">Slide 06</div><h2>End state and value to government</h2></div>
+      <div class="slide-body">
+        <div>
+          <div class="chain">
+            <span class="lbl">Today</span><span class="c">Individual Hubs</span><span class="a"><svg class="icon"><use href="#i-arrow"/></svg></span><span class="c">Individual operating models</span><span class="a"><svg class="icon"><use href="#i-arrow"/></svg></span><span class="c">Individual systems</span>
+          </div>
+          <div class="chain new">
+            <span class="lbl g">Proposed</span><span class="c">Individual Hubs</span><span class="a"><svg class="icon"><use href="#i-arrow"/></svg></span><span class="c hl">Common network platform</span><span class="a"><svg class="icon"><use href="#i-arrow"/></svg></span><span class="c">Shared services &amp; infrastructure</span>
+          </div>
+        </div>
+        <div class="triad">
+          <div><b>Outcome</b>Hubs stay distinct</div>
+          <div><b>Outcome</b>The network becomes national</div>
+          <div><b>Outcome</b>The operating system becomes common</div>
+        </div>
+        <div class="visual">
+          <div class="vlabel">Value to government</div>
+          <div class="chips">
+            <span class="chip dark">Shared visibility &amp; infrastructure</span>
+            <span class="chip dark">Common processes</span>
+            <span class="chip dark">Broader access to technologies &amp; companies</span>
+            <span class="chip dark">Coordinated validation</span>
+            <span class="chip dark">Better investment connections</span>
+            <span class="chip dark">Clearer acquisition &amp; adoption pathways</span>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+  <footer class="pf"><span>COMMONS Network Brief · ARI franchise model</span><span class="pn"><i>06</i> / 10</span></footer>
+</section>
+
+<!-- =============================== 7 · MARKETPLACE & TIMELINES =============================== -->
+<section class="page">
+  <header class="ph">
+    <div class="ph-brand"><svg class="m"><use href="#mark"/></svg><b>MAIN Hub</b><span class="sep"></span><span>Microelectronics Commons</span></div>
+    <div class="ph-sec">Marketplace &amp; Timelines</div>
+  </header>
+  <div class="title" style="padding-bottom:10px">
+    <div><div class="eyebrow">Marketplace &amp; Timelines</div><h1>Where the CFP stands, and<br>two paths to a marketplace</h1></div>
+    <p class="lede">The COMMONS Call for Proposals is moving toward award. In parallel, R&amp;E can buy microelectronics through a marketplace in one of two ways.</p>
+  </div>
+  <div class="panel">
+    <div class="panel-h"><h2>COMMONS Call for Proposals: proposal &amp; award timeline</h2><span class="k">CFP</span></div>
+    <div class="tl">
+      <div class="today"><span>We are here</span><i></i></div>
+      <div class="ms"><span class="pin">1</span><span class="d">Nov 21, 2025</span><span class="e">Call for Proposals</span></div>
+      <div class="ms"><span class="pin">2</span><span class="d">Jan 12, 2026</span><span class="e">Abstracts due</span></div>
+      <div class="ms"><span class="pin">3</span><span class="d">Apr 16, 2026</span><span class="e">Full proposals due</span></div>
+      <div class="ms"><span class="pin">4</span><span class="d">Jun 1–12, 2026</span><span class="e">Virtual pitches</span></div>
+      <div class="ms"><span class="pin">5</span><span class="d">Jul 6, 2026</span><span class="e">1st elimination gate</span></div>
+      <div class="ms fc"><span class="pin">6</span><span class="d">Nov 2026</span><span class="e">Award notification</span><span class="f">Forecast</span></div>
+      <div class="ms fc"><span class="pin">7</span><span class="d">Feb 2027</span><span class="e">Contract executed</span><span class="f">Forecast</span></div>
+    </div>
+    <div class="tl-legend"><span><i class="o" style="background:var(--navy)"></i>Confirmed milestone</span><span><i class="o" style="border:2px solid var(--green)"></i>Forecasted milestone</span></div>
+  </div>
+  <div class="opts">
+    <div class="opt o1">
+      <div class="opt-h"><div><div class="tag">Option 1 · See page 08</div><h3>Stand up a DoW Microelectronics Marketplace</h3></div><svg class="icon" style="width:24px;height:24px;color:var(--sky)"><use href="#i-store"/></svg></div>
+      <div class="opt-b">
+        <div class="kv">
+          <div><small>Go live</small><b>60 days</b></div>
+          <div><small>Cost</small><b>$3M / yr</b></div>
+          <div><small>Contracting</small><b class="s">Sole-sourceable</b></div>
+        </div>
+        <div class="rel">
+          <div class="track"><div class="fill">On contract → stand up the marketplace</div><div class="end">Live</div></div>
+          <div class="scale"><span style="position:absolute;left:0">Day 0</span><span style="position:absolute;left:39%;transform:translateX(-50%)">Day 30</span><span style="position:absolute;left:78%;transform:translateX(-50%)">Day 60</span></div>
+        </div>
+        <dl class="facts">
+          <dt>Approach</dt><dd>Stand up an independent, brand-new DoW marketplace</dd>
+          <dt>Contracting</dt><dd>Our marketplaces are sole-sourceable, so getting on contract is straightforward</dd>
+          <dt>Funding</dt><dd>Requires some funding for projects to back a new marketplace</dd>
+        </dl>
+        <div class="opt-foot"><b>$3M per year</b> for a brand-new program, live <b>60 days</b> after getting on contract.</div>
+      </div>
+    </div>
+    <div class="opt o2">
+      <div class="opt-h"><div><div class="tag">Option 2 · See page 09</div><h3>APEX path: A&amp;S Microelectronics + R&amp;E topic sponsor</h3></div><svg class="icon" style="width:24px;height:24px;color:var(--mint)"><use href="#i-cart"/></svg></div>
+      <div class="opt-b">
+        <div class="kv">
+          <div><small>Go live</small><b>Dec 1</b></div>
+          <div><small>Cost</small><b>~$400K</b></div>
+          <div><small>First buy</small><b>Feb 1</b></div>
+        </div>
+        <div class="gantt">
+          <span class="mo">Dec</span><span class="mo">Jan</span><span class="mo">Feb</span><span class="mo">Mar</span>
+          <div class="lane"><div class="bar gg" style="left:0;width:24.5%">First collection</div><div class="bar g" style="left:25%;width:24.5%">Assessment</div><div class="flag" style="left:50.5%">Feb 1 · first to buy</div></div>
+          <div class="lane"><div class="bar s" style="left:0;width:24.5%">R&amp;E/CT special topic</div><div class="flag" style="left:25.5%;font-weight:600;color:var(--muted)">runs in parallel with the first collection</div></div>
+        </div>
+        <dl class="facts">
+          <dt>Approach</dt><dd>Use APEX, where A&amp;S already has a microelectronics category</dd>
+          <dt>R&amp;E role</dt><dd>Topic sponsor: adds funding to drive topics or shopping notices</dd>
+          <dt>Buyer</dt><dd>NSTXL could still perform the buy</dd>
+        </dl>
+        <div class="opt-foot"><b>~$400K one-time setup fee</b>. Live <b>December 1</b>, with the first buy on <b>February 1</b>.</div>
+      </div>
+    </div>
+  </div>
+  <footer class="pf"><span>COMMONS Network Brief · Marketplace &amp; timelines</span><span class="pn"><i>07</i> / 10</span></footer>
+</section>
+
+<!-- =============================== 8 · OPTION 1 =============================== -->
+<section class="page">
+  <header class="ph">
+    <div class="ph-brand"><svg class="m"><use href="#mark"/></svg><b>MAIN Hub</b><span class="sep"></span><span>Microelectronics Commons</span></div>
+    <div class="ph-sec">Marketplace · Option 1</div>
+  </header>
+  <div class="title">
+    <div><div class="eyebrow">Option 1 · Start your own marketplace</div><h1>Stand up a DoW<br><em>Microelectronics Marketplace</em></h1></div>
+    <p class="lede">Stand up an independent effort: a dedicated marketplace for microelectronics, live 60 days after it goes on contract.</p>
+  </div>
+  <div class="detail">
+    <div class="col">
+      <div class="stats">
+        <div class="stat"><small>Time to go live</small><b>60 <span>days</span></b><p>From getting on contract</p></div>
+        <div class="stat alt"><small>Annual cost</small><b><sup>$</sup>3M<span> / yr</span></b><p>For a brand-new program</p></div>
+        <div class="stat grn"><small>Contracting</small><b style="font-size:20px;line-height:1.15;padding-top:6px">Sole-<br>sourceable</b></div>
+      </div>
+      <div class="card">
+        <h4><svg class="icon"><use href="#i-store"/></svg>Overview</h4>
+        <p>Stand up an <b>independent DoW Microelectronics Marketplace</b>. Our marketplaces are sole-sourceable, so <b>getting on contract is straightforward</b>. Once on contract, it takes <b>60 days to go live</b>.</p>
+      </div>
+      <div class="card tint" style="flex:1;display:flex;flex-direction:column">
+        <h4><svg class="icon"><use href="#i-coin"/></svg>Key elements</h4>
+        <ul class="tick-list">
+          <li><svg class="icon"><use href="#i-check"/></svg><span><b>Project funding required:</b> some funding is needed for projects to back a new marketplace.</span></li>
+          <li><svg class="icon"><use href="#i-check"/></svg><span><b>Annual cost:</b> $3M per year for a brand-new program.</span></li>
+          <li><svg class="icon"><use href="#i-check"/></svg><span><b>Timeline:</b> go live 60 days after getting on contract.</span></li>
+        </ul>
+        <div class="rel" style="margin-top:auto;padding-top:18px">
+          <div class="vlabel" style="margin-bottom:2px">Time to go live</div>
+          <div class="track" style="background:#fff;border:1px solid var(--line)"><div class="fill">On contract → stand up the marketplace</div><div class="end">Live</div></div>
+          <div class="scale"><span style="position:absolute;left:0">Day 0</span><span style="position:absolute;left:39%;transform:translateX(-50%)">Day 30</span><span style="position:absolute;left:78%;transform:translateX(-50%)">Day 60</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card" style="flex:1">
+        <h4><svg class="icon"><use href="#i-flag"/></svg>How it works</h4>
+        <div class="steps">
+          <div class="step"><span class="n">1</span><div class="w"><small>Contract</small><b>Get on contract by sole source</b><p>Our marketplaces are sole-sourceable, so contracting is straightforward.</p></div></div>
+          <div class="step"><span class="n">2</span><div class="w"><small>Days 0 – 60</small><b>Stand up the marketplace</b><p>Build a dedicated DoW Microelectronics Marketplace as an independent effort.</p></div></div>
+          <div class="step"><span class="n">3</span><div class="w"><small>Day 60</small><b>Go live</b><p>The marketplace opens for microelectronics technologies and companies.</p></div></div>
+          <div class="step g"><span class="n">4</span><div class="w"><small>Ongoing · $3M / yr</small><b>Operate and fund projects</b><p>Run the program and fund the projects that back the new marketplace.</p></div></div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:0">
+        <span class="k">Bottom line</span>
+        A fully independent program, contracted by sole source and live in 60 days. It carries a $3M annual cost and needs project funding behind it.
+      </div>
+    </div>
+  </div>
+  <footer class="pf"><span>COMMONS Network Brief · Option 1: stand up a DoW Microelectronics Marketplace</span><span class="pn"><i>08</i> / 10</span></footer>
+</section>
+
+<!-- =============================== 9 · OPTION 2 =============================== -->
+<section class="page">
+  <header class="ph">
+    <div class="ph-brand"><svg class="m"><use href="#mark"/></svg><b>MAIN Hub</b><span class="sep"></span><span>Microelectronics Commons</span></div>
+    <div class="ph-sec">Marketplace · Option 2</div>
+  </header>
+  <div class="title">
+    <div><div class="eyebrow">Option 2 · Use the APEX Marketplace</div><h1>The APEX path: A&amp;S Microelectronics<br><em>+ R&amp;E topic sponsor</em></h1></div>
+    <p class="lede">Build on the APEX Marketplace, where A&amp;S already has a microelectronics category. R&amp;E adds funding to drive topics or shopping notices.</p>
+  </div>
+  <div class="detail">
+    <div class="col">
+      <div class="stats">
+        <div class="stat grn"><small>APEX goes live</small><b>Dec 1</b><p>First collection opens</p></div>
+        <div class="stat alt"><small>One-time setup</small><b>~<sup>$</sup>400K</b><p>Setup fee, paid once</p></div>
+        <div class="stat"><small>First to buy</small><b>Feb 1</b><p>After January assessment</p></div>
+      </div>
+      <div class="card" style="flex:1;display:flex;flex-direction:column">
+        <h4><svg class="icon"><use href="#i-clock"/></svg>Structure &amp; timeline</h4>
+        <div class="steps">
+          <div class="step g"><span class="n">1</span><div class="w"><small>December 1</small><b>Go live with the first collection</b><p>APEX opens with the A&amp;S microelectronics category. R&amp;E funding drives topics or shopping notices.</p></div></div>
+          <div class="step g"><span class="n">2</span><div class="w"><small>January</small><b>Assessment</b><p>Submissions are assessed, with an option for a 30-day assessment window.</p></div></div>
+          <div class="step g"><span class="n">3</span><div class="w"><small>February 1</small><b>First to buy</b><p>First purchases can be made off the marketplace.</p></div></div>
+        </div>
+        <div style="margin-top:auto;border:1.5px dashed var(--green);border-radius:10px;padding:8px 11px;font-size:10.3px;line-height:1.45;color:var(--ink)"><b style="color:var(--green)">In parallel:</b> R&amp;E/CT can run a special topic alongside the first collection.</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card tint">
+        <h4><svg class="icon"><use href="#i-sliders"/></svg>Process adjustments (optional)</h4>
+        <p style="margin-bottom:8px">The submission format can be adjusted to add rigor if required:</p>
+        <ul class="tick-list">
+          <li><svg class="icon"><use href="#i-check"/></svg><span><b>5-minute video + white paper</b> submission</span></li>
+          <li><svg class="icon"><use href="#i-check"/></svg><span><b>30-day assessment window</b></span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4><svg class="icon"><use href="#i-cart"/></svg>Who performs the buy</h4>
+        <p><b>NSTXL could still perform the buy.</b> There's precedent on Tradewinds:</p>
+        <div class="precedent">
+          <div><small>Marketplace</small><b>Tradewinds</b></div>
+          <i><svg class="icon"><use href="#i-arrow"/></svg></i>
+          <div><small>Special topics</small><b>WIRE</b></div>
+          <i><svg class="icon"><use href="#i-arrow"/></svg></i>
+          <div><small>Performed the buy</small><b>ATI</b></div>
+        </div>
+      </div>
+      <div class="card">
+        <h4><svg class="icon"><use href="#i-sliders"/></svg>How it compares with Option 1</h4>
+        <dl class="facts" style="grid-template-columns:86px 1fr 1fr;border-top:0">
+          <dt style="padding-top:0"></dt><dd style="padding-top:0;font-size:8px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--green)">Option 2 · APEX</dd><dd style="padding-top:0;font-size:8px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--navy-500)">Option 1 · Own marketplace</dd>
+          <dt>Go live</dt><dd><b>Dec 1</b></dd><dd>60 days after getting on contract</dd>
+          <dt>Cost</dt><dd><b>~$400K one-time</b></dd><dd>$3M per year</dd>
+          <dt>Platform</dt><dd><b>Existing A&amp;S category</b></dd><dd>Brand-new program</dd>
+        </dl>
+      </div>
+      <div class="callout g" style="margin-top:auto">
+        <span class="k">Bottom line</span>
+        Uses the existing A&amp;S microelectronics category on APEX. It goes live December 1 for a ~$400K one-time setup fee, with the first buy on February 1.
+      </div>
+    </div>
+  </div>
+  <footer class="pf"><span>COMMONS Network Brief · Option 2: the APEX path</span><span class="pn"><i>09</i> / 10</span></footer>
+</section>
+
+<!-- =============================== 10 · BACK COVER =============================== -->
+<section class="page cover">
+  <div class="glow" style="right:auto;left:-2in;top:-2.4in"></div><div class="glow2" style="left:auto;right:-2in"></div>
+  __TRACES__
+  <div class="cover-in">
+    <div class="back-center">
+      <svg class="mk"><use href="#mark"/></svg>
+      <div class="back-lines">
+        <div>Hubs stay <em>distinct.</em></div>
+        <div>The network becomes <em>national.</em></div>
+        <div>The operating system becomes <em>common.</em></div>
+      </div>
+      <p class="back-sub">A common network platform gives the Department shared visibility and infrastructure, common processes, and broader access to technologies and companies. It also brings coordinated validation, better investment connections, and clearer acquisition and adoption pathways.</p>
+    </div>
+    <div class="back-foot">
+      <div class="lockup">
+        <svg><use href="#mark"/></svg>
+        <div><b>MAIN Hub</b><small>Microelectronics for American Innovation and National Security</small></div>
+      </div>
+      <div class="org"><b>Applied Research Institute</b><br>theari.us · October 2026</div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
