@@ -40,19 +40,16 @@ subprocess.run([
 ], check=True)
 print("wrote", here / "MAIN_COMMONS_Network_Brief.pdf")
 
-# Printer-safe copy: shrink each page into a 0.3in white margin on the same US Letter landscape sheet,
-# so office printers don't crop the full-bleed covers or page edges. Output stays vector.
+# Duplex copy: rotate every back side (pages 2, 4, 6, 8, 10) 180 degrees so that when the landscape pages
+# print double-sided with the printer's default long-edge flip, the backs come out right side up.
 import pymupdf
 
 full = here / "MAIN_COMMONS_Network_Brief.pdf"
-bleed = here / "MAIN_COMMONS_Network_Brief_fullbleed.pdf"
-full.replace(bleed)
-src = pymupdf.open(bleed)
+duplex = here / "MAIN_COMMONS_Network_Brief_duplex.pdf"
+src = pymupdf.open(full)
 out = pymupdf.open()
-margin = 0.3 * 72
 for i, page in enumerate(src):
-    w, h = page.rect.width, page.rect.height
-    dst = out.new_page(width=w, height=h)
-    dst.show_pdf_page(pymupdf.Rect(margin, margin, w - margin, h - margin), src, i)
-out.save(full, garbage=4, deflate=True)
-print("wrote", full, "(print-safe) and", bleed)
+    dst = out.new_page(width=page.rect.width, height=page.rect.height)
+    dst.show_pdf_page(dst.rect, src, i, rotate=180 if i % 2 else 0)
+out.save(duplex, garbage=4, deflate=True)
+print("wrote", duplex)
