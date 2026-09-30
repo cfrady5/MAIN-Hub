@@ -39,3 +39,20 @@ subprocess.run([
     f"--print-to-pdf={here / 'MAIN_COMMONS_Network_Brief.pdf'}", out_html.as_uri(),
 ], check=True)
 print("wrote", here / "MAIN_COMMONS_Network_Brief.pdf")
+
+# Printer-safe copy: shrink each page into a 0.3in white margin on the same US Letter landscape sheet,
+# so office printers don't crop the full-bleed covers or page edges. Output stays vector.
+import pymupdf
+
+full = here / "MAIN_COMMONS_Network_Brief.pdf"
+bleed = here / "MAIN_COMMONS_Network_Brief_fullbleed.pdf"
+full.replace(bleed)
+src = pymupdf.open(bleed)
+out = pymupdf.open()
+margin = 0.3 * 72
+for i, page in enumerate(src):
+    w, h = page.rect.width, page.rect.height
+    dst = out.new_page(width=w, height=h)
+    dst.show_pdf_page(pymupdf.Rect(margin, margin, w - margin, h - margin), src, i)
+out.save(full, garbage=4, deflate=True)
+print("wrote", full, "(print-safe) and", bleed)
