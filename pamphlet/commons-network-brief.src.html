@@ -53,7 +53,7 @@
   .ph {
     display: flex; align-items: center; justify-content: space-between;
     padding-bottom: 10px; border-bottom: 1px solid var(--line);
-    font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: var(--navy-500);
+    font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; color: var(--navy-500);
   }
   .ph-brand { display: flex; align-items: center; gap: 8px; }
   .ph-brand .m { width: 26px; height: 21px; color: var(--navy); }
@@ -160,6 +160,8 @@
     font-size: 7px; font-weight: 800; letter-spacing: 0.12em; padding: 3px 6px; border-radius: 99px; text-transform: uppercase;
     box-shadow: 0 0 0 2px #fff;
   }
+  .mainwrap { width: 100%; position: relative; border: 1.5px solid var(--green); border-radius: 11px; padding: 12px 5px 5px; background: rgba(185,231,166,.14); display: flex; flex-direction: column; align-items: center; }
+  .mainwrap > .encl-tag { background: var(--green); color: #fff; top: -8px; font-size: 7.5px; }
   .hub.changed { border-top-color: var(--green); position: relative; }
 
   /* ---------- Aside ---------- */
@@ -214,7 +216,7 @@
   .bignum p { font-size: 12px; color: var(--muted); line-height: 1.45; margin-left: 6px; padding-left: 14px; border-left: 1px solid var(--navy-200); }
 
   .hubrow { display: flex; gap: 6px; justify-content: space-between; }
-  .hubchip { flex: 1; text-align: center; font-size: 10.5px; font-weight: 800; color: var(--navy); background: #fff; border: 1px solid var(--navy-200); border-top: 3px solid var(--sky); border-radius: 7px; padding: 9px 2px; }
+  .hubchip { flex: 1; display: flex; align-items: center; justify-content: center; line-height: 1.2; text-align: center; font-size: 10.5px; font-weight: 800; color: var(--navy); background: #fff; border: 1px solid var(--navy-200); border-bottom: 3px solid var(--sky); border-radius: 7px; padding: 7px 2px; }
   .ticks { display: flex; justify-content: space-around; padding: 0 20px; }
   .ticks span { width: 2px; height: 16px; background: var(--conn); }
   .platform { background: var(--navy); color: #fff; border-radius: 8px; padding: 10px 10px; text-align: center; font-size: 12px; font-weight: 800; letter-spacing: .01em; }
@@ -283,7 +285,8 @@
   .ms { display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; z-index: 1; }
   .ms .pin { width: 34px; height: 34px; border-radius: 50%; background: var(--navy); border: 3px solid #fff; box-shadow: 0 0 0 2px var(--navy); display: grid; place-items: center; color: #fff; font-size: 10px; font-weight: 800; }
   .ms.fc .pin { background: #fff; color: var(--green); box-shadow: 0 0 0 2px var(--green); border-style: solid; }
-  .ms .d { margin-top: 8px; font-size: 11.5px; font-weight: 800; color: var(--navy); letter-spacing: -0.01em; }
+  .ms .day { margin-top: 7px; font-size: 7.8px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--sky-deep); }
+  .ms .d { margin-top: 2px; font-size: 11.5px; font-weight: 800; color: var(--navy); letter-spacing: -0.01em; }
   .ms .e { font-size: 9.5px; color: var(--muted); margin-top: 1px; line-height: 1.3; font-weight: 500; }
   .ms .f { margin-top: 4px; font-size: 7px; font-weight: 800; letter-spacing: .14em; color: var(--green); border: 1px solid var(--green); border-radius: 99px; padding: 1px 6px; }
   .today { position: absolute; top: -6px; left: 71.4%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; z-index: 2; }
@@ -470,8 +473,8 @@
       <div><small>05</small><span>Franchise model: ARI &amp; services</span></div>
       <div><small>06</small><span>Franchise model: end state</span></div>
       <div><small>07</small><span>Marketplace &amp; timelines</span></div>
-      <div><small>08</small><span>Start your own marketplace</span></div>
-      <div><small>09</small><span>Use the APEX Marketplace</span></div>
+      <div><small>08</small><span>Use the A&amp;S Marketplace (APEX)</span></div>
+      <div><small>09</small><span>Start your own marketplace</span></div>
     </div>
     <div class="cover-foot"><span>Applied Research Institute</span><span>October 2026</span></div>
   </div>
@@ -485,7 +488,7 @@
   </header>
   <div class="title one">
     <div><div class="eyebrow">Today</div><h1>Current COMMONS organizational structure</h1></div>
-    <p class="lede">Five regional Tech Hubs connect directly to the consortium manager, and each one runs its own operating model.</p>
+    <p class="lede">Five Tech Hubs connect directly to the consortium manager, and each one runs its own operating model.</p>
   </div>
   <div class="org-wrap">
     <div class="chart">
@@ -527,14 +530,14 @@
         <div class="bn"><div class="hub"><span class="k">Tech Hub</span><span class="n">CA DREAMS</span><span class="r">California DREAMS Hub</span></div><div class="sub-vc"></div><div class="partner"><span class="k">Partner</span><span class="n">NWAI</span><span class="r">Northwest AI</span></div></div>
         <div class="bn"><div class="hub"><span class="k">Tech Hub</span><span class="n">Nordtech</span><span class="r">Northeast Regional Defense Tech Hub</span></div><div class="sub-vc"></div><div class="partner"><span class="k">Partner</span><span class="n">CLAWS</span><span class="r">Wide Bandgap Semiconductors Hub</span></div></div>
         <div class="bn"><div class="hub"><span class="k">Tech Hub</span><span class="n">SWAP</span><span class="r">Southwest Advanced Prototyping</span></div></div>
-        <div class="bn"><div class="hub"><span class="k">Tech Hub</span><span class="n">SCMC</span><span class="r">Silicon Crossroads Microelectronics Commons</span></div><div class="sub-vc"></div><div class="partner"><span class="k">Partner</span><span class="n">NEMC</span><span class="r">Northeast Microelectronics Coalition</span></div></div>
+        <div class="bn"><div class="mainwrap"><span class="encl-tag">MAIN Hub</span><div class="hub"><span class="k">Tech Hub</span><span class="n">SCMC</span><span class="r">Silicon Crossroads Microelectronics Commons</span></div><div class="sub-vc"></div><div class="partner"><span class="k">Partner</span><span class="n">NEMC</span><span class="r">Northeast Microelectronics Coalition</span></div></div></div>
       </div>
     </div>
     <aside class="aside">
       <h3>How it works today</h3>
       <ul>
         <li><b>NSTXL</b> is the consortium manager and executes COMMONS through the <b>S2MARTS OTA</b>.</li>
-        <li><b>Regional Hubs</b> connect directly to NSTXL as the technical execution hubs.</li>
+        <li><b>Hubs</b> connect directly to NSTXL as the technical execution hubs.</li>
         <li><b>CT Leads</b> provide domain-specific technology governance and technical alignment as an external advisory arm.</li>
         <li>The Hubs were stood up <b>independently</b>, each with its own organization, leadership, relationships, capabilities, and priorities.</li>
       </ul>
@@ -562,7 +565,7 @@
   </header>
   <div class="title one" style="padding-bottom:10px">
     <div><div class="eyebrow">Proposed</div><h1>Proposed COMMONS organizational structure</h1></div>
-    <p class="lede">ARI becomes the network administrator (the franchisor) inside a MAIN boundary, directly above all regional Hubs.</p>
+    <p class="lede">ARI becomes the network administrator (the franchisor) inside a MAIN Hub boundary, directly above all Hubs.</p>
   </div>
   <div class="org-wrap">
     <div class="chart" style="padding-top:14px;padding-bottom:10px">
@@ -608,20 +611,20 @@
           <div class="bn"><div class="hub"><span class="k">Tech Hub</span><span class="n">CA DREAMS</span><span class="r">California DREAMS Hub</span></div><div class="sub-vc"></div><div class="partner"><span class="k">Partner</span><span class="n">NWAI</span><span class="r">Northwest AI</span></div></div>
           <div class="bn"><div class="hub"><span class="k">Tech Hub</span><span class="n">Nordtech</span><span class="r">Northeast Regional Defense Tech Hub</span></div><div class="sub-vc"></div><div class="partner"><span class="k">Partner</span><span class="n">CLAWS</span><span class="r">Wide Bandgap Semiconductors Hub</span></div></div>
           <div class="bn"><div class="hub"><span class="k">Tech Hub</span><span class="n">SWAP</span><span class="r">Southwest Advanced Prototyping</span></div></div>
-          <div class="bn"><div class="hub changed"><span class="k">Tech Hub</span><span class="n">NEMC</span><span class="r">Northeast Microelectronics Coalition</span></div></div>
+          <div class="bn"><div class="hub"><span class="k">Tech Hub</span><span class="n">NEMC</span><span class="r">Northeast Microelectronics Coalition</span></div></div>
         </div>
       </div>
     </div>
     <aside class="aside">
       <h3>What changes</h3>
       <ul class="green">
-        <li><b>ARI becomes the network administrator</b>, providing a common operating system for every Hub inside the MAIN boundary.</li>
-        <li><b>ARI dissolves its standalone Hub role.</b> SCMC's capabilities become a platform that supports the entire network, and <b>NEMC</b> continues as the regional Hub.</li>
+        <li><b>ARI becomes the network administrator</b>, providing a common operating system for every Hub inside the MAIN Hub boundary.</li>
+        <li><b>ARI dissolves its standalone Hub role.</b> SCMC's capabilities become a platform that supports the entire network, and <b>NEMC</b> continues as a Tech Hub.</li>
         <li><b>Only shared functions are centralized.</b> Each Hub keeps its identity, leadership, expertise, membership, and relationships.</li>
       </ul>
       <h3>What stays the same</h3>
       <ul>
-        <li>Government oversight, the NSWC Crane team, NSTXL execution through S2MARTS, and CT Leads' governance</li>
+        <li>Government oversight, the NSWC Crane team, NSTXL execution through S2MARTS, and CT Leads' domain support</li>
       </ul>
       <div class="callout g">
         <span class="k">The result</span>
@@ -636,7 +639,7 @@
 <section class="page">
   <header class="ph">
     <div class="ph-brand"><svg class="m"><use href="#mark"/></svg><b>MAIN Hub</b><span class="sep"></span><span>Microelectronics Commons</span></div>
-    <div class="ph-sec">ARI Franchise Model · 1 – 2</div>
+    <div class="ph-sec">ARI Franchise Model · 1</div>
   </header>
   <div class="title">
     <div><div class="eyebrow">The Franchise Model</div><h1>A common operating system<br>for the Microelectronics Hubs</h1></div>
@@ -644,7 +647,7 @@
   </div>
   <div class="slides">
     <article class="slide">
-      <div class="slide-head"><span class="ghost">01</span><div class="no">Slide 01</div><h2>Purpose and context</h2></div>
+      <div class="slide-head"><h2>Purpose and context</h2></div>
       <div class="slide-body">
         <ul class="pts">
           <li><span class="dot"><svg class="icon"><use href="#i-target"/></svg></span><div><b>Purpose</b>Establish a common "franchise model" so the Microelectronics Hubs operate more consistently, efficiently, and in a structured way.</div></li>
@@ -661,7 +664,7 @@
       </div>
     </article>
     <article class="slide">
-      <div class="slide-head"><span class="ghost">02</span><div class="no">Slide 02</div><h2>The administrator model</h2></div>
+      <div class="slide-head"><h2>The administrator model</h2></div>
       <div class="slide-body">
         <ul class="pts">
           <li><span class="dot"><svg class="icon"><use href="#i-layers"/></svg></span><div><b>Proposal</b>Designate one organization as a network-level administrator that provides a common operating system for all Hubs.</div></li>
@@ -670,9 +673,9 @@
         <div class="quote">Focus: centralize what benefits from consistency and scale, not the Hubs themselves.</div>
         <div class="visual">
           <div class="vlabel">Hubs stay independent · shared functions are centralized</div>
-          <div class="hubrow"><span class="hubchip">MMEC</span><span class="hubchip">CA DREAMS</span><span class="hubchip">Nordtech</span><span class="hubchip">SWAP</span><span class="hubchip">NEMC</span></div>
-          <div class="ticks"><span></span><span></span><span></span><span></span><span></span></div>
           <div class="platform"><small>Network administrator</small>Common operating system: shared functions</div>
+          <div class="ticks"><span></span><span></span><span></span><span></span><span></span></div>
+          <div class="hubrow"><span class="hubchip">MMEC</span><span class="hubchip">CA DREAMS<br>/ NWAI</span><span class="hubchip">Nordtech<br>/ CLAWS</span><span class="hubchip">SWAP</span><span class="hubchip">NEMC</span></div>
         </div>
       </div>
     </article>
@@ -684,7 +687,7 @@
 <section class="page">
   <header class="ph">
     <div class="ph-brand"><svg class="m"><use href="#mark"/></svg><b>MAIN Hub</b><span class="sep"></span><span>Microelectronics Commons</span></div>
-    <div class="ph-sec">ARI Franchise Model · 3 – 4</div>
+    <div class="ph-sec">ARI Franchise Model · 2</div>
   </header>
   <div class="title">
     <div><div class="eyebrow">The Franchise Model</div><h1>Why ARI, and what it<br>would run for the network</h1></div>
@@ -692,7 +695,7 @@
   </div>
   <div class="slides">
     <article class="slide">
-      <div class="slide-head"><span class="ghost">03</span><div class="no">Slide 03</div><h2>Why ARI fits: existing model and capabilities</h2></div>
+      <div class="slide-head"><h2>Why ARI fits: existing model and capabilities</h2></div>
       <div class="slide-body">
         <ul class="pts">
           <li><span class="dot"><svg class="icon"><use href="#i-flag"/></svg></span><div><b>Track record</b>ARI already coordinates through the DIU on-ramp model, providing:</div></li>
@@ -719,7 +722,7 @@
       </div>
     </article>
     <article class="slide">
-      <div class="slide-head"><span class="ghost">04</span><div class="no">Slide 04</div><h2>Shared services under the common operating system</h2></div>
+      <div class="slide-head"><h2>Shared services under the common operating system</h2></div>
       <div class="slide-body">
         <div class="svc">
           <div class="svc-row"><span class="ic"><svg class="icon"><use href="#i-book"/></svg></span><div><b>Operating model</b><span>Shared playbooks, SOPs, service definitions, and processes.</span></div></div>
@@ -738,7 +741,7 @@
 <section class="page">
   <header class="ph">
     <div class="ph-brand"><svg class="m"><use href="#mark"/></svg><b>MAIN Hub</b><span class="sep"></span><span>Microelectronics Commons</span></div>
-    <div class="ph-sec">ARI Franchise Model · 5 – 6</div>
+    <div class="ph-sec">ARI Franchise Model · 3</div>
   </header>
   <div class="title">
     <div><div class="eyebrow">The Franchise Model</div><h1>Hubs stay distinct.<br>The network <em>goes national.</em></h1></div>
@@ -746,7 +749,7 @@
   </div>
   <div class="slides">
     <article class="slide">
-      <div class="slide-head"><span class="ghost">05</span><div class="no">Slide 05</div><h2>What does not change: Hub autonomy and national reach</h2></div>
+      <div class="slide-head"><h2>What does not change: Hub autonomy and national reach</h2></div>
       <div class="slide-body">
         <ul class="pts">
           <li><span class="dot"><svg class="icon"><use href="#i-shield"/></svg></span><div><b>Autonomy</b>No Hub is centralized. Each one keeps:</div></li>
@@ -760,12 +763,12 @@
           <span class="check"><svg class="icon"><use href="#i-check"/></svg>Areas of focus</span>
         </div>
         <ul class="pts">
-          <li><span class="dot"><svg class="icon"><use href="#i-globe"/></svg></span><div><b>National orientation</b>Many Hubs already operate nationally. A network administrator reinforces that and keeps the Hubs from becoming regional silos.</div></li>
-          <li><span class="dot"><svg class="icon"><use href="#i-pin"/></svg></span><div><b>Local to national</b>Regional Hubs such as CLAWS and NWAI connect local strengths to national opportunities through the network.</div></li>
+          <li><span class="dot"><svg class="icon"><use href="#i-globe"/></svg></span><div><b>National orientation</b>Many Hubs already operate nationally. A network administrator reinforces that and keeps the Hubs from becoming silos.</div></li>
+          <li><span class="dot"><svg class="icon"><use href="#i-pin"/></svg></span><div><b>Local to national</b>Hubs connect local innovation strengths to national opportunities through the network.</div></li>
         </ul>
         <div class="visual">
           <div class="reach">
-            <div class="st"><small>Local</small><b>CLAWS · NWAI</b></div>
+            <div class="st"><small>Local</small><b>Innovation</b></div>
             <div class="a"><svg class="icon"><use href="#i-arrow"/></svg></div>
             <div class="st mid"><small>Network</small><b>Common platform</b></div>
             <div class="a"><svg class="icon"><use href="#i-arrow"/></svg></div>
@@ -775,7 +778,7 @@
       </div>
     </article>
     <article class="slide">
-      <div class="slide-head"><span class="ghost">06</span><div class="no">Slide 06</div><h2>End state and value to government</h2></div>
+      <div class="slide-head"><h2>End state and value to government</h2></div>
       <div class="slide-body">
         <div>
           <div class="chain">
@@ -787,7 +790,7 @@
         </div>
         <div class="triad">
           <div><b>Outcome</b>Hubs stay distinct</div>
-          <div><b>Outcome</b>The network becomes national</div>
+          <div><b>Outcome</b>The network engages nationally</div>
           <div><b>Outcome</b>The operating system becomes common</div>
         </div>
         <div class="visual">
@@ -814,26 +817,46 @@
     <div class="ph-sec">Marketplace &amp; Timelines</div>
   </header>
   <div class="title" style="padding-bottom:10px">
-    <div><div class="eyebrow">Marketplace &amp; Timelines</div><h1>Where the CFP stands, and<br>two paths to a marketplace</h1></div>
-    <p class="lede">The COMMONS Call for Proposals is moving toward award. In parallel, R&amp;E can buy microelectronics through a marketplace in one of two ways.</p>
+    <div><div class="eyebrow">Marketplace &amp; Timelines</div><h1>Moving award timelines to<br>the speed of operations</h1></div>
+    <p class="lede">The ASW wants technology developed in 24 months or less. Our goal is to move from call to award 10x faster, cutting award time from 50% of technical execution to under 5%.</p>
   </div>
   <div class="panel">
     <div class="panel-h"><h2>COMMONS Call for Proposals: proposal &amp; award timeline</h2><span class="k">CFP</span></div>
     <div class="tl">
       <div class="today"><span>We are here</span><i></i></div>
-      <div class="ms"><span class="pin">1</span><span class="d">Nov 21, 2025</span><span class="e">Call for Proposals</span></div>
-      <div class="ms"><span class="pin">2</span><span class="d">Jan 12, 2026</span><span class="e">Abstracts due</span></div>
-      <div class="ms"><span class="pin">3</span><span class="d">Apr 16, 2026</span><span class="e">Full proposals due</span></div>
-      <div class="ms"><span class="pin">4</span><span class="d">Jun 1–12, 2026</span><span class="e">Virtual pitches</span></div>
-      <div class="ms"><span class="pin">5</span><span class="d">Jul 6, 2026</span><span class="e">1st elimination gate</span></div>
-      <div class="ms fc"><span class="pin">6</span><span class="d">Nov 2026</span><span class="e">Award notification</span><span class="f">Forecast</span></div>
-      <div class="ms fc"><span class="pin">7</span><span class="d">Feb 2027</span><span class="e">Contract executed</span><span class="f">Forecast</span></div>
+      <div class="ms"><span class="pin">1</span><span class="day">Day 0</span><span class="d">Nov 21, 2025</span><span class="e">Call for Proposals</span></div>
+      <div class="ms"><span class="pin">2</span><span class="day">Day 52</span><span class="d">Jan 12, 2026</span><span class="e">Abstracts due</span></div>
+      <div class="ms"><span class="pin">3</span><span class="day">Day 146</span><span class="d">Apr 16, 2026</span><span class="e">Full proposals due</span></div>
+      <div class="ms"><span class="pin">4</span><span class="day">Day 192–203</span><span class="d">Jun 1–12, 2026</span><span class="e">Virtual pitches</span></div>
+      <div class="ms"><span class="pin">5</span><span class="day">Day 227</span><span class="d">Jul 6, 2026</span><span class="e">1st elimination gate</span></div>
+      <div class="ms fc"><span class="pin">6</span><span class="day">Day 345–374</span><span class="d">Nov 2026</span><span class="e">Award notification</span><span class="f">Forecast</span></div>
+      <div class="ms fc"><span class="pin">7</span><span class="day">Day 437–464</span><span class="d">Feb 2027</span><span class="e">Contract executed</span><span class="f">Forecast</span></div>
     </div>
-    <div class="tl-legend"><span><i class="o" style="background:var(--navy)"></i>Confirmed milestone</span><span><i class="o" style="border:2px solid var(--green)"></i>Forecasted milestone</span></div>
   </div>
   <div class="opts">
+    <div class="opt o2">
+      <div class="opt-h"><div><div class="tag">Option 1 · See page 08</div><h3>Leverage the existing A&amp;S Marketplace (APEX)</h3></div><svg class="icon" style="width:24px;height:24px;color:var(--mint)"><use href="#i-cart"/></svg></div>
+      <div class="opt-b">
+        <div class="kv">
+          <div><small>Go live</small><b>Dec 1</b></div>
+          <div><small>Cost / topic</small><b>~$400K</b></div>
+          <div><small>First buy</small><b>Feb 1</b></div>
+        </div>
+        <div class="gantt">
+          <span class="mo">Dec</span><span class="mo">Jan</span><span class="mo">Feb</span><span class="mo">Mar</span>
+          <div class="lane"><div class="bar gg" style="left:0;width:24.5%">First collection</div><div class="bar g" style="left:25%;width:24.5%">Assessment</div><div class="flag" style="left:50.5%">Feb 1 · first to buy</div></div>
+          <div class="lane"><div class="bar s" style="left:0;width:24.5%">R&amp;E/CT special topic</div><div class="flag" style="left:25.5%;font-weight:600;color:var(--muted)">runs in parallel with the first collection</div></div>
+        </div>
+        <dl class="facts">
+          <dt>Approach</dt><dd>Use APEX, where A&amp;S already has a microelectronics category</dd>
+          <dt>R&amp;E role</dt><dd>Topic sponsor: adds funding to drive topics or shopping notices</dd>
+          <dt>Buyer</dt><dd>NSTXL could still perform the buy</dd>
+        </dl>
+        <div class="opt-foot"><b>~$400K fee for a single topic</b>. Live <b>December 1</b>, with the first buy on <b>February 1</b>.</div>
+      </div>
+    </div>
     <div class="opt o1">
-      <div class="opt-h"><div><div class="tag">Option 1 · See page 08</div><h3>Stand up a DoW Microelectronics Marketplace</h3></div><svg class="icon" style="width:24px;height:24px;color:var(--sky)"><use href="#i-store"/></svg></div>
+      <div class="opt-h"><div><div class="tag">Option 2 · See page 09</div><h3>Stand up a DoW Microelectronics Marketplace</h3></div><svg class="icon" style="width:24px;height:24px;color:var(--sky)"><use href="#i-store"/></svg></div>
       <div class="opt-b">
         <div class="kv">
           <div><small>Go live</small><b>60 days</b></div>
@@ -852,100 +875,25 @@
         <div class="opt-foot"><b>$3M per year</b> for a brand-new program, live <b>60 days</b> after getting on contract.</div>
       </div>
     </div>
-    <div class="opt o2">
-      <div class="opt-h"><div><div class="tag">Option 2 · See page 09</div><h3>APEX path: A&amp;S Microelectronics + R&amp;E topic sponsor</h3></div><svg class="icon" style="width:24px;height:24px;color:var(--mint)"><use href="#i-cart"/></svg></div>
-      <div class="opt-b">
-        <div class="kv">
-          <div><small>Go live</small><b>Dec 1</b></div>
-          <div><small>Cost</small><b>~$400K</b></div>
-          <div><small>First buy</small><b>Feb 1</b></div>
-        </div>
-        <div class="gantt">
-          <span class="mo">Dec</span><span class="mo">Jan</span><span class="mo">Feb</span><span class="mo">Mar</span>
-          <div class="lane"><div class="bar gg" style="left:0;width:24.5%">First collection</div><div class="bar g" style="left:25%;width:24.5%">Assessment</div><div class="flag" style="left:50.5%">Feb 1 · first to buy</div></div>
-          <div class="lane"><div class="bar s" style="left:0;width:24.5%">R&amp;E/CT special topic</div><div class="flag" style="left:25.5%;font-weight:600;color:var(--muted)">runs in parallel with the first collection</div></div>
-        </div>
-        <dl class="facts">
-          <dt>Approach</dt><dd>Use APEX, where A&amp;S already has a microelectronics category</dd>
-          <dt>R&amp;E role</dt><dd>Topic sponsor: adds funding to drive topics or shopping notices</dd>
-          <dt>Buyer</dt><dd>NSTXL could still perform the buy</dd>
-        </dl>
-        <div class="opt-foot"><b>~$400K one-time setup fee</b>. Live <b>December 1</b>, with the first buy on <b>February 1</b>.</div>
-      </div>
-    </div>
-  </div>
+</div>
   <footer class="pf"><span>COMMONS Network Brief · Marketplace &amp; timelines</span><span class="pn"><i>07</i> / 10</span></footer>
 </section>
 
-<!-- =============================== 8 · OPTION 1 =============================== -->
+<!-- =============================== 8 · OPTION 1 (APEX) =============================== -->
 <section class="page">
   <header class="ph">
     <div class="ph-brand"><svg class="m"><use href="#mark"/></svg><b>MAIN Hub</b><span class="sep"></span><span>Microelectronics Commons</span></div>
     <div class="ph-sec">Marketplace · Option 1</div>
   </header>
   <div class="title">
-    <div><div class="eyebrow">Option 1 · Start your own marketplace</div><h1>Stand up a DoW<br><em>Microelectronics Marketplace</em></h1></div>
-    <p class="lede">Stand up an independent effort: a dedicated marketplace for microelectronics, live 60 days after it goes on contract.</p>
-  </div>
-  <div class="detail">
-    <div class="col">
-      <div class="stats">
-        <div class="stat"><small>Time to go live</small><b>60 <span>days</span></b><p>From getting on contract</p></div>
-        <div class="stat alt"><small>Annual cost</small><b><sup>$</sup>3M<span> / yr</span></b><p>For a brand-new program</p></div>
-        <div class="stat grn"><small>Contracting</small><b style="font-size:20px;line-height:1.15;padding-top:6px">Sole-<br>sourceable</b></div>
-      </div>
-      <div class="card">
-        <h4><svg class="icon"><use href="#i-store"/></svg>Overview</h4>
-        <p>Stand up an <b>independent DoW Microelectronics Marketplace</b>. Our marketplaces are sole-sourceable, so <b>getting on contract is straightforward</b>. Once on contract, it takes <b>60 days to go live</b>.</p>
-      </div>
-      <div class="card tint" style="flex:1;display:flex;flex-direction:column">
-        <h4><svg class="icon"><use href="#i-coin"/></svg>Key elements</h4>
-        <ul class="tick-list">
-          <li><svg class="icon"><use href="#i-check"/></svg><span><b>Project funding required:</b> some funding is needed for projects to back a new marketplace.</span></li>
-          <li><svg class="icon"><use href="#i-check"/></svg><span><b>Annual cost:</b> $3M per year for a brand-new program.</span></li>
-          <li><svg class="icon"><use href="#i-check"/></svg><span><b>Timeline:</b> go live 60 days after getting on contract.</span></li>
-        </ul>
-        <div class="rel" style="margin-top:auto;padding-top:18px">
-          <div class="vlabel" style="margin-bottom:2px">Time to go live</div>
-          <div class="track" style="background:#fff;border:1px solid var(--line)"><div class="fill">On contract → stand up the marketplace</div><div class="end">Live</div></div>
-          <div class="scale"><span style="position:absolute;left:0">Day 0</span><span style="position:absolute;left:39%;transform:translateX(-50%)">Day 30</span><span style="position:absolute;left:78%;transform:translateX(-50%)">Day 60</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card" style="flex:1">
-        <h4><svg class="icon"><use href="#i-flag"/></svg>How it works</h4>
-        <div class="steps">
-          <div class="step"><span class="n">1</span><div class="w"><small>Contract</small><b>Get on contract by sole source</b><p>Our marketplaces are sole-sourceable, so contracting is straightforward.</p></div></div>
-          <div class="step"><span class="n">2</span><div class="w"><small>Days 0 – 60</small><b>Stand up the marketplace</b><p>Build a dedicated DoW Microelectronics Marketplace as an independent effort.</p></div></div>
-          <div class="step"><span class="n">3</span><div class="w"><small>Day 60</small><b>Go live</b><p>The marketplace opens for microelectronics technologies and companies.</p></div></div>
-          <div class="step g"><span class="n">4</span><div class="w"><small>Ongoing · $3M / yr</small><b>Operate and fund projects</b><p>Run the program and fund the projects that back the new marketplace.</p></div></div>
-        </div>
-      </div>
-      <div class="callout" style="margin-top:0">
-        <span class="k">Bottom line</span>
-        A fully independent program, contracted by sole source and live in 60 days. It carries a $3M annual cost and needs project funding behind it.
-      </div>
-    </div>
-  </div>
-  <footer class="pf"><span>COMMONS Network Brief · Option 1: stand up a DoW Microelectronics Marketplace</span><span class="pn"><i>08</i> / 10</span></footer>
-</section>
-
-<!-- =============================== 9 · OPTION 2 =============================== -->
-<section class="page">
-  <header class="ph">
-    <div class="ph-brand"><svg class="m"><use href="#mark"/></svg><b>MAIN Hub</b><span class="sep"></span><span>Microelectronics Commons</span></div>
-    <div class="ph-sec">Marketplace · Option 2</div>
-  </header>
-  <div class="title">
-    <div><div class="eyebrow">Option 2 · Use the APEX Marketplace</div><h1>The APEX path: A&amp;S Microelectronics<br><em>+ R&amp;E topic sponsor</em></h1></div>
+    <div><div class="eyebrow">Option 1 · Use the A&amp;S Marketplace</div><h1>Leverage the existing<br><em>A&amp;S Marketplace (APEX)</em></h1></div>
     <p class="lede">Build on the APEX Marketplace, where A&amp;S already has a microelectronics category. R&amp;E adds funding to drive topics or shopping notices.</p>
   </div>
   <div class="detail">
     <div class="col">
       <div class="stats">
         <div class="stat grn"><small>APEX goes live</small><b>Dec 1</b><p>First collection opens</p></div>
-        <div class="stat alt"><small>One-time setup</small><b>~<sup>$</sup>400K</b><p>Setup fee, paid once</p></div>
+        <div class="stat alt"><small>Fee per topic</small><b>~<sup>$</sup>400K</b><p>Fee for a single topic</p></div>
         <div class="stat"><small>First to buy</small><b>Feb 1</b><p>After January assessment</p></div>
       </div>
       <div class="card" style="flex:1;display:flex;flex-direction:column">
@@ -979,21 +927,76 @@
         </div>
       </div>
       <div class="card">
-        <h4><svg class="icon"><use href="#i-sliders"/></svg>How it compares with Option 1</h4>
+        <h4><svg class="icon"><use href="#i-sliders"/></svg>How it compares with Option 2</h4>
         <dl class="facts" style="grid-template-columns:86px 1fr 1fr;border-top:0">
-          <dt style="padding-top:0"></dt><dd style="padding-top:0;font-size:8px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--green)">Option 2 · APEX</dd><dd style="padding-top:0;font-size:8px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--navy-500)">Option 1 · Own marketplace</dd>
+          <dt style="padding-top:0"></dt><dd style="padding-top:0;font-size:8px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--green)">Option 1 · APEX</dd><dd style="padding-top:0;font-size:8px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--navy-500)">Option 2 · Own marketplace</dd>
           <dt>Go live</dt><dd><b>Dec 1</b></dd><dd>60 days after getting on contract</dd>
-          <dt>Cost</dt><dd><b>~$400K one-time</b></dd><dd>$3M per year</dd>
+          <dt>Cost</dt><dd><b>~$400K per topic</b></dd><dd>$3M per year</dd>
           <dt>Platform</dt><dd><b>Existing A&amp;S category</b></dd><dd>Brand-new program</dd>
         </dl>
       </div>
       <div class="callout g" style="margin-top:auto">
         <span class="k">Bottom line</span>
-        Uses the existing A&amp;S microelectronics category on APEX. It goes live December 1 for a ~$400K one-time setup fee, with the first buy on February 1.
+        Uses the existing A&amp;S microelectronics category on APEX. It goes live December 1 for a ~$400K fee for a single topic, with the first buy on February 1.
       </div>
     </div>
   </div>
-  <footer class="pf"><span>COMMONS Network Brief · Option 2: the APEX path</span><span class="pn"><i>09</i> / 10</span></footer>
+  <footer class="pf"><span>COMMONS Network Brief · Option 1: leverage the existing A&amp;S Marketplace</span><span class="pn"><i>08</i> / 10</span></footer>
+</section>
+
+<!-- =============================== 9 · OPTION 2 (own marketplace) =============================== -->
+<section class="page">
+  <header class="ph">
+    <div class="ph-brand"><svg class="m"><use href="#mark"/></svg><b>MAIN Hub</b><span class="sep"></span><span>Microelectronics Commons</span></div>
+    <div class="ph-sec">Marketplace · Option 2</div>
+  </header>
+  <div class="title">
+    <div><div class="eyebrow">Option 2 · Start your own marketplace</div><h1>Stand up a DoW<br><em>Microelectronics Marketplace</em></h1></div>
+    <p class="lede">Stand up an independent effort: a dedicated marketplace for microelectronics, live 60 days after it goes on contract.</p>
+  </div>
+  <div class="detail">
+    <div class="col">
+      <div class="stats">
+        <div class="stat"><small>Time to go live</small><b>60 <span>days</span></b><p>From getting on contract</p></div>
+        <div class="stat alt"><small>Annual cost</small><b><sup>$</sup>3M<span> / yr</span></b><p>For a brand-new program</p></div>
+        <div class="stat grn"><small>Contracting</small><b style="font-size:20px;line-height:1.15;padding-top:6px">Sole-<br>sourceable</b></div>
+      </div>
+      <div class="card">
+        <h4><svg class="icon"><use href="#i-store"/></svg>Overview</h4>
+        <p>Stand up an <b>independent DoW Microelectronics Marketplace</b>. Our marketplaces are sole-sourceable, so <b>getting on contract is straightforward</b>. Once on contract, it takes <b>60 days to go live</b>.</p>
+      </div>
+      <div class="card tint" style="flex:1;display:flex;flex-direction:column">
+        <h4><svg class="icon"><use href="#i-coin"/></svg>Key elements</h4>
+        <ul class="tick-list">
+          <li><svg class="icon"><use href="#i-check"/></svg><span><b>Project funding required:</b> some funding is needed for projects to back a new marketplace.</span></li>
+          <li><svg class="icon"><use href="#i-check"/></svg><span><b>Annual cost:</b> $3M per year for a brand-new program.</span></li>
+          <li><svg class="icon"><use href="#i-check"/></svg><span><b>Timeline:</b> go live 60 days after getting on contract.</span></li>
+          <li><svg class="icon"><use href="#i-check"/></svg><span><b>Open to all government buyers:</b> any government agency can purchase from the marketplace, so COMMONS can attract investment from outside the COMMONS program.</span></li>
+        </ul>
+        <div class="rel" style="margin-top:auto;padding-top:18px">
+          <div class="vlabel" style="margin-bottom:2px">Time to go live</div>
+          <div class="track" style="background:#fff;border:1px solid var(--line)"><div class="fill">On contract → stand up the marketplace</div><div class="end">Live</div></div>
+          <div class="scale"><span style="position:absolute;left:0">Day 0</span><span style="position:absolute;left:39%;transform:translateX(-50%)">Day 30</span><span style="position:absolute;left:78%;transform:translateX(-50%)">Day 60</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card" style="flex:1">
+        <h4><svg class="icon"><use href="#i-flag"/></svg>How it works</h4>
+        <div class="steps">
+          <div class="step"><span class="n">1</span><div class="w"><small>Contract</small><b>Get on contract by sole source</b><p>Our marketplaces are sole-sourceable, so contracting is straightforward.</p></div></div>
+          <div class="step"><span class="n">2</span><div class="w"><small>Days 0 – 60</small><b>Stand up the marketplace</b><p>Build a dedicated DoW Microelectronics Marketplace as an independent effort.</p></div></div>
+          <div class="step"><span class="n">3</span><div class="w"><small>Day 60</small><b>Go live</b><p>The marketplace opens for microelectronics technologies and companies.</p></div></div>
+          <div class="step g"><span class="n">4</span><div class="w"><small>Ongoing · $3M / yr</small><b>Operate and fund projects</b><p>Run the program and fund the projects that back the new marketplace.</p></div></div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:0">
+        <span class="k">Bottom line</span>
+        A fully independent program, contracted by sole source and live in 60 days. It carries a $3M annual cost and needs project funding behind it.
+      </div>
+    </div>
+  </div>
+  <footer class="pf"><span>COMMONS Network Brief · Option 2: stand up a DoW Microelectronics Marketplace</span><span class="pn"><i>09</i> / 10</span></footer>
 </section>
 
 <!-- =============================== 10 · BACK COVER =============================== -->
