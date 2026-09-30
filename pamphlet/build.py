@@ -40,8 +40,9 @@ subprocess.run([
 ], check=True)
 print("wrote", here / "MAIN_COMMONS_Network_Brief.pdf")
 
-# Duplex copy: rotate every back side (pages 2, 4, 6, 8, 10) 180 degrees so that when the landscape pages
+# Duplex copy: rotate the interior back sides (pages 2, 4, 6, 8) 180 degrees so that when the landscape pages
 # print double-sided with the printer's default long-edge flip, the backs come out right side up.
+# The last page is the back cover, so it stays upright.
 import pymupdf
 
 full = here / "MAIN_COMMONS_Network_Brief.pdf"
@@ -50,6 +51,6 @@ src = pymupdf.open(full)
 out = pymupdf.open()
 for i, page in enumerate(src):
     dst = out.new_page(width=page.rect.width, height=page.rect.height)
-    dst.show_pdf_page(dst.rect, src, i, rotate=180 if i % 2 else 0)
+    dst.show_pdf_page(dst.rect, src, i, rotate=180 if i % 2 and i != len(src) - 1 else 0)
 out.save(duplex, garbage=4, deflate=True)
 print("wrote", duplex)
