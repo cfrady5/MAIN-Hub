@@ -27,8 +27,11 @@ traces_svg = (
 )
 
 html = (here / "commons-network-brief.src.html").read_text()
-font = "data:font/woff2;base64," + base64.b64encode((here / "fonts/PlusJakartaSans-latin.woff2").read_bytes()).decode()
-html = html.replace("__FONT__", font).replace("__MARK_PATH__", mark).replace("__TRACES__", traces_svg)
+# Static, properly named weights so the PDF embeds "PlusJakartaSans-*" fonts that Canva/Acrobat can match.
+for weight in ("Regular", "Medium", "SemiBold", "Bold", "ExtraBold"):
+    data = base64.b64encode((here / f"fonts/PlusJakartaSans-{weight}.woff2").read_bytes()).decode()
+    html = html.replace(f"__FONT_{weight}__", "data:font/woff2;base64," + data)
+html = html.replace("__MARK_PATH__", mark).replace("__TRACES__", traces_svg)
 out_html = here / "commons-network-brief.html"
 out_html.write_text(html)
 
