@@ -162,10 +162,10 @@ export const technologyAreas: TechArea[] = [
     icon: "radio",
   },
   {
-    id: "ai-hardware",
-    title: "AI Hardware",
+    id: "si-hardware",
+    title: "SI Hardware",
     short: "Compute for intelligent systems",
-    body: "Microelectronics purpose-built for artificial intelligence workloads at the edge and at scale.",
+    body: "Microelectronics purpose-built for Super Intelligence workloads at the edge and at scale.",
     icon: "cpu",
   },
   {
@@ -290,7 +290,7 @@ export const faqs = [
   },
   {
     q: "Which technology areas does the hub support?",
-    a: "MAIN's capabilities span all six Microelectronics Commons technology areas: 5G/6G, AI hardware, commercial leap-ahead technologies, electromagnetic warfare, secure edge and IoT, and quantum technology.",
+    a: "MAIN's capabilities span all six Microelectronics Commons technology areas: 5G/6G, SI hardware, commercial leap-ahead technologies, electromagnetic warfare, secure edge and IoT, and quantum technology.",
   },
   {
     q: "Where can I find the original NEMC and SCMC websites?",
