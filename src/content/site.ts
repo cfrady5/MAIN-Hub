@@ -19,8 +19,8 @@ export const siteConfig = {
     "The Microelectronics for American Innovation and National Security Hub connects more than 600 organizations across academia, industry, government, FFRDCs, and the startup community. By combining complementary strengths across the Northeast and Midwest, MAIN helps move emerging microelectronics technologies from research to domestic prototyping, manufacturing, and operational use.",
   mission:
     "By uniting more than 600 partners, the MAIN Hub harnesses the combined strengths of the Midwest and Northeast to accelerate domestic microelectronics from lab discovery to field-ready defense manufacturing.",
-  /** Public launch date assumed by the communications plan. Update if the announcement moves. */
-  announcementDate: "2026-10-01",
+  /** Public announcement date shown on the release page, newsroom card and sitemap. */
+  announcementDate: "2026-11-24",
   contact: {
     mediaName: "Thomas McAninch",
     mediaTitle: "Director of Communications, Applied Research Institute",

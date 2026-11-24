@@ -28,7 +28,7 @@ export const pressRelease = {
     },
     {
       type: "p",
-      text: "The MAIN Hub's core strength is connecting technology with mission and market impact – aligning technical performance, affordability, manufacturability, and development milestones with the unique requirements of the warfighter and the realities of the microelectronics supply chain. The Hub focuses on technologies where conventional approaches may not meet emerging mission demands, including applications requiring exceptional performance, reliability, security, power handling, or operation in extreme environments.",
+      text: "The MAIN Hub’s core strength is connecting technology with mission and market impact – aligning technical performance, affordability, manufacturability, and development milestones with the unique requirements of the warfighter and the realities of the microelectronics supply chain. The Hub focuses on technologies where conventional approaches may not meet emerging mission demands, including applications requiring exceptional performance, reliability, security, power handling, or operation in extreme environments.",
     },
     {
       type: "p",
@@ -36,13 +36,13 @@ export const pressRelease = {
     },
     {
       type: "quote",
-      text: "SCMC and NEMC bring complementary strengths that, together, create a more powerful national platform for microelectronics innovation. By combining SCMC's defense-transition expertise with NEMC's broad coalition, MAIN can help more promising technologies move from innovation to meaningful national security impact. Our goal is to ensure that more of the innovation emerging from this ecosystem reaches the warfighter and delivers meaningful national security impact.",
+      text: "SCMC and NEMC bring complementary strengths that, together, create a more powerful national platform for microelectronics innovation. By combining SCMC’s defense-transition expertise with NEMC’s broad coalition, MAIN can help more promising technologies move from innovation to meaningful national security impact. Our goal is to ensure that more of the innovation emerging from this ecosystem reaches the warfighter and delivers meaningful national security impact.",
       name: "Ben Griffin",
       title: "Executive Director of the Silicon Crossroads Microelectronics Commons Hub (SCMC) and Senior Vice President of Research Partnerships at the Applied Research Institute",
     },
     {
       type: "quote",
-      text: "Bringing together the NEMC and SCMC hubs creates a uniquely powerful national asset for strengthening America's microelectronics ecosystem. By combining the Northeast's extraordinary concentration of semiconductor development and innovation with SCMC's expertise in defense sector system integration, we can create a more connected pathway from breakthrough research to prototyping, manufacturing, and deployment.",
+      text: "Bringing together the NEMC and SCMC hubs creates a uniquely powerful national asset for strengthening America’s microelectronics ecosystem. By combining the Northeast’s extraordinary concentration of semiconductor development and innovation with SCMC’s expertise in defense sector system integration, we can create a more connected pathway from breakthrough research to prototyping, manufacturing, and deployment.",
       name: "Mark Halfman",
       title: "Director of the Northeast Microelectronics Coalition (NEMC) Hub at the Massachusetts Technology Collaborative",
     },
@@ -52,7 +52,7 @@ export const pressRelease = {
     },
     {
       type: "quote",
-      text: "America's microelectronics advantage depends not only on breakthrough research, but on our ability to turn that research into technologies that can be manufactured, scaled, and deployed. MAIN brings mission needs, technical expertise, industrial capabilities, and transition partners into one coordinated ecosystem. Together, we can reduce barriers for innovators and move critical technologies toward the warfighter with greater speed and purpose.",
+      text: "America’s microelectronics advantage depends not only on breakthrough research, but on our ability to turn that research into technologies that can be manufactured, scaled, and deployed. MAIN brings mission needs, technical expertise, industrial capabilities, and transition partners into one coordinated ecosystem. Together, we can reduce barriers for innovators and move critical technologies toward the warfighter with greater speed and purpose.",
       name: "Andrew Kossack",
       title: "President & CEO, Applied Research Institute",
     },
@@ -78,12 +78,12 @@ export const pressRelease = {
     { type: "h2", text: "About the Applied Research Institute (ARI)" },
     {
       type: "p",
-      text: "The Applied Research Institute is a 501(c)(3) nonprofit organization that accelerates the transition of breakthrough science and technology into mission-ready impact. ARI works across government, industry, academia, and communities to build partnerships, manage complex initiatives, and create pathways that move innovation from discovery through validation, transition, and scale. Its work spans national security, advanced technology, economic development, workforce, and emerging technology ecosystems, including microelectronics, biomanufacturing, Super Intelligence, advanced manufacturing, and autonomous systems. Through initiatives such as Silicon Crossroads, Heartland BioWorks, DARPAConnect, and other mission-driven programs, ARI serves as an operational partner connecting innovators and institutions with the resources, expertise, and pathways needed to turn ideas into real-world capabilities.",
+      text: "The Applied Research Institute is a 501(c)(3) nonprofit organization that accelerates the transition of breakthrough science and technology into mission-ready impact. ARI works across government, industry, academia, and communities to build partnerships, manage complex initiatives, and create pathways that move innovation from discovery through validation, transition, and scale. Its work spans national security, advanced technology, economic development, workforce, and emerging technology ecosystems, including microelectronics, biomanufacturing, super intelligence, advanced manufacturing, and autonomous systems. Through initiatives such as Silicon Crossroads, Heartland BioWorks, DARPAConnect, and other mission-driven programs, ARI serves as an operational partner connecting innovators and institutions with the resources, expertise, and pathways needed to turn ideas into real-world capabilities.",
     },
     { type: "h2", text: "About the Massachusetts Technology Collaborative" },
     {
       type: "p",
-      text: "The Massachusetts Technology Collaborative (MassTech) is a statewide public agency focused on advancing technology. The organization strengthens the competitiveness of the tech and innovation economy by driving strategic investments, partnerships and insights that harness the talent of Massachusetts. MassTech supports the Bay State's tech sector with a strategic focus on talent, ecosystems and innovation infrastructure across its diverse divisions and programs. MassTech is working to create and grow economic opportunity in the following areas: Super Intelligence, advanced manufacturing, broadband, cybersecurity, digital health, innovation and microelectronics.",
+      text: "The Massachusetts Technology Collaborative (MassTech) is a statewide public agency focused on advancing technology. The organization strengthens the competitiveness of the tech and innovation economy by driving strategic investments, partnerships and insights that harness the talent of Massachusetts. MassTech supports the Bay State’s tech sector with a strategic focus on talent, ecosystems and innovation infrastructure across its diverse divisions and programs. MassTech is working to create and grow economic opportunity in the following areas: advanced manufacturing, broadband, cybersecurity, defense, digital health, innovation and microelectronics.",
     },
   ] satisfies ReleaseBlock[],
 };
